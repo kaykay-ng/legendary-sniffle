@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Visualization - Group Assignment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Directed Graph Network Visualization</h1>
+            <p>Interactive visualization of network structure and connections</p>
+        </header>
+
+        <div class="controls">
+            <button id="resetView">Reset View</button>
+            <button id="toggleLayout">Change Layout</button>
+            <button id="toggleStats">Show/Hide Stats</button>
+            <input type="file" id="fileInput" accept=".json,.tsv" placeholder="Load custom data">
+        </div>
+
+        <div id="stats" class="stats">
+            <h3>Network Statistics</h3>
+            <div id="statsContent">
+                <p>Nodes: <span id="nodeCount">0</span></p>
+                <p>Edges: <span id="edgeCount">0</span></p>
+                <p>Density: <span id="density">0.000</span></p>
+            </div>
+        </div>
+
+        <div id="cy" class="cytoscape"></div>
+
+        <footer>
+            <p>Group Assignment - Network Analysis Project</p>
+        </footer>
+    </div>
+
+    <script src="js/visualization.js"></script>
+</body>
+</html>
