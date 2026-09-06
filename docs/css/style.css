@@ -322,6 +322,13 @@ table.leaderboard tbody tr:last-child td {
   color: var(--ink-2);
 }
 
+.layout-name {
+  color: var(--muted);
+  font-size: 0.88em;
+  font-weight: 600;
+  margin-left: auto;
+}
+
 .stats {
   background: var(--page);
   border: 1px solid var(--border);
