@@ -10,13 +10,15 @@ group-assignment/
 ├── notebooks/             # Jupyter notebooks for analysis
 │   └── analysis.ipynb     # Main network analysis notebook
 ├── docs/                  # GitHub Pages (published at your-username.github.io/group-assignment)
-│   ├── index.html         # Main visualization page
+│   ├── index.html         # Network explorer + Exercise 1.6 degree-distribution report
 │   ├── css/
 │   │   └── style.css      # Styling
 │   ├── js/
 │   │   └── visualization.js # Network visualization (Cytoscape.js)
+│   ├── images/            # Charts exported from analysis.ipynb (Exercise 1.6)
 │   └── data/
-│       └── network.json   # Network data file
+│       ├── network.json             # Network data file
+│       └── exercise_1_6_stats.json  # Numbers behind the Exercise 1.6 report
 ├── venv/                  # Python virtual environment
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file

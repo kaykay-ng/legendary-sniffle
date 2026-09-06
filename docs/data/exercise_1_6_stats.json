@@ -1,0 +1,57 @@
+{
+  "n_nodes": 303,
+  "m_directed": 1784,
+  "m_undirected": 1434,
+  "isolates": 17,
+  "avg_degree": 9.465,
+  "mutual_pairs": 350,
+  "top5_in_degree": [
+    {
+      "name": "Spider-Man",
+      "degree": 106
+    },
+    {
+      "name": "Hulk",
+      "degree": 64
+    },
+    {
+      "name": "Wolverine (character)",
+      "degree": 60
+    },
+    {
+      "name": "Doctor Strange",
+      "degree": 50
+    },
+    {
+      "name": "Deadpool",
+      "degree": 33
+    }
+  ],
+  "top5_out_degree": [
+    {
+      "name": "Betsy Braddock",
+      "degree": 28
+    },
+    {
+      "name": "Cloak and Dagger (characters)",
+      "degree": 24
+    },
+    {
+      "name": "Adam Warlock",
+      "degree": 22
+    },
+    {
+      "name": "Venom (character)",
+      "degree": 21
+    },
+    {
+      "name": "She-Hulk",
+      "degree": 20
+    }
+  ],
+  "calibration_max_diff": 0.0,
+  "sample_size": 10000,
+  "power_law_alpha": 2.5,
+  "power_law_xmin": 1.0,
+  "exponential_scale": 10.0
+}

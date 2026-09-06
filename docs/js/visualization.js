@@ -11,7 +11,7 @@ function initCytoscape(elements) {
                 selector: 'node',
                 style: {
                     'content': 'data(id)',
-                    'background-color': '#667eea',
+                    'background-color': '#2a78d6',
                     'color': '#fff',
                     'width': 40,
                     'height': 40,
@@ -24,24 +24,28 @@ function initCytoscape(elements) {
                 selector: 'edge',
                 style: {
                     'width': 2,
-                    'line-color': '#ccc',
-                    'target-arrow-color': '#999',
+                    'line-color': '#c3c2b7',
+                    'target-arrow-color': '#898781',
                     'target-arrow-shape': 'triangle',
                     'curve-style': 'bezier'
                 }
             },
             {
-                selector: 'node:hover',
+                // Cytoscape has no real ':hover' pseudo-selector (unlike CSS) - it
+                // would silently match every element instead of just the hovered
+                // one. Real hover is wired up below via mouseover/mouseout, which
+                // toggle this class.
+                selector: 'node.hovered',
                 style: {
-                    'background-color': '#764ba2',
+                    'background-color': '#eb6834',
                     'width': 50,
                     'height': 50
                 }
             },
             {
-                selector: 'edge:hover',
+                selector: 'edge.hovered',
                 style: {
-                    'line-color': '#667eea',
+                    'line-color': '#2a78d6',
                     'width': 3
                 }
             }
@@ -58,6 +62,14 @@ function initCytoscape(elements) {
 
     // Update statistics
     updateStats();
+
+    // Real hover highlighting (see the .hovered comment above)
+    cy.on('mouseover', 'node, edge', function(evt) {
+        evt.target.addClass('hovered');
+    });
+    cy.on('mouseout', 'node, edge', function(evt) {
+        evt.target.removeClass('hovered');
+    });
 
     // Add click event to nodes
     cy.on('tap', 'node', function(evt) {
