@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Model Looks Like Marvel?</title>
+    <meta name="description" content="Which generative model looks like Marvel? Random, small-world, and preferential-attachment models, plus configuration-model and edge-swap nulls, tested against the real network's clustering, path length, and friendship paradox — with a hand-built stub-pairing explorable and a free-form reciprocity follow-up.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <nav class="nav">
+                <a href="index.html">Hub</a>
+                <a href="week1.html">Week 1 · Explorer &amp; Distributions</a>
+                <a href="week2.html" class="active">Week 2 · Model Comparison</a>
+            </nav>
+            <nav class="nav-banner">
+                On this page:
+                <a href="#models">Which model looks like Marvel?</a> ·
+                <a href="#nulls">Configuration model vs. edge swap</a> ·
+                <a href="#explorable">Stub-pairing explorable</a> ·
+                <a href="#paradox">Friendship paradox</a> ·
+                <a href="#reciprocity">Reciprocity, tested</a>
+            </nav>
+            <div class="hero-eyebrow">02805 · Social Graphs and Interactions · Week 2</div>
+            <h1>Which Model Looks Like Marvel?</h1>
+            <p class="lede">
+                Four textbook generative models — random, small-world, preferential attachment, and
+                two degree-preserving nulls — tested against the real Marvel character network on
+                three things: path length, clustering, and the friendship paradox. Plus a hand-built
+                interactive explorable, and a free-form follow-up that tests a reciprocity claim with
+                the right null instead of the wrong one.
+            </p>
+            <div class="stat-row" id="heroStats">
+                <div class="stat-tile"><div class="value">277</div><div class="label">nodes, giant component</div></div>
+                <div class="stat-tile"><div class="value">2.67</div><div class="label">real path length L</div></div>
+                <div class="stat-tile"><div class="value">0.320</div><div class="label">real clustering C</div></div>
+                <div class="stat-tile"><div class="value">2.4&times;</div><div class="label">real friendship paradox</div></div>
+            </div>
+        </header>
+
+        <main>
+            <section id="models" class="section">
+                <h2>Which Generative Model Looks Like Marvel?</h2>
+                <p class="section-intro">
+                    Same giant component throughout (277 nodes, 1,421 links, &#10216;k&#10217;&nbsp;&asymp;&nbsp;10.26).
+                    Five models, matched on n and (as closely as each model allows) on m or
+                    &#10216;k&#10217;: $G(n,m)$ random, Watts&ndash;Strogatz small-world, Barab&aacute;si&ndash;Albert
+                    preferential attachment, and two nulls that start from Marvel's <em>exact</em> degree
+                    sequence — the configuration model and degree-preserving edge swaps.
+                </p>
+
+                <div class="card">
+                    <div class="subsection">
+                        <h3>Every model, side by side</h3>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Structural comparison</caption>
+                                <thead><tr><th>Model</th><th>C</th><th>T</th><th>L</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Real Marvel</strong></td><td class="num">0.320</td><td class="num">0.182</td><td class="num">2.674</td></tr>
+                                    <tr><td>G(n,m) random</td><td class="num">0.037</td><td class="num">0.037</td><td class="num">2.662</td></tr>
+                                    <tr><td>Watts&ndash;Strogatz (q=0.1)</td><td class="num">0.522</td><td class="num">&mdash;</td><td class="num">3.618</td></tr>
+                                    <tr><td>Barab&aacute;si&ndash;Albert</td><td class="num">0.099</td><td class="num">0.077</td><td class="num">2.579</td></tr>
+                                    <tr><td>Configuration model</td><td class="num">0.111</td><td class="num">0.103</td><td class="num">&mdash;</td></tr>
+                                    <tr><td>Edge swap</td><td class="num">0.154</td><td class="num">0.118</td><td class="num">&mdash;</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Degree distribution</caption>
+                                <thead><tr><th>Model</th><th>max degree</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Real Marvel</strong></td><td class="num">106</td></tr>
+                                    <tr><td>G(n,m) random</td><td class="num">~24</td></tr>
+                                    <tr><td>Watts&ndash;Strogatz</td><td class="num">~16</td></tr>
+                                    <tr><td>Barab&aacute;si&ndash;Albert (m=5)</td><td class="num">~64</td></tr>
+                                    <tr><td>Config. model / edge swap</td><td class="num">106 (exact)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <figure class="chart">
+                            <img src="images/ex210_model_comparison.png" alt="Left: Watts-Strogatz clustering and path length curves normalized to the ring lattice, swept across rewiring probability, with the real network's normalized position marked. Right: bar chart of clustering and path length for every model compared to the real network.">
+                            <figcaption>Left: the classic Watts&ndash;Strogatz small-world curve, with Marvel's own (normalized) position marked. Right: every model's C and L, side by side.</figcaption>
+                        </figure>
+                        <div class="callout">
+                            <strong>Path length alone never distinguishes the real network from a random
+                            graph of the same size.</strong> G(n,m)'s L (2.66) is essentially identical to
+                            the real network's (2.67) — and the Watts&ndash;Strogatz sweep shows why: L
+                            collapses to its random-graph floor after only a small amount of rewiring
+                            (q&nbsp;&asymp;&nbsp;0.01&ndash;0.03 already gets most of the way there), while
+                            clustering barely moves until q is much larger. The real network's own
+                            normalized position (C<sub>real</sub>/C<sub>0</sub>&nbsp;&asymp;&nbsp;0.48,
+                            L<sub>real</sub>/L<sub>0</sub>&nbsp;&asymp;&nbsp;0.19) sits almost exactly on the
+                            fully-rewired end of the L curve, but <em>well above</em> the clustering curve at
+                            that same point. That combination — random-like path length, non-random-like
+                            clustering — is the actual small-world signature, and it only shows up once
+                            both quantities are checked together.
+                        </div>
+                        <div class="callout orange">
+                            <strong>Barab&aacute;si&ndash;Albert gets a heavy tail almost for free</strong> —
+                            max degree ~64 across replicates (vs. the real network's 106) and a respectable
+                            clustering coefficient (~0.10, in the same range as the configuration model),
+                            just from growth + preferential attachment, no explicit clustering mechanism
+                            needed. But it still undershoots the real C by a factor of ~3, for the same
+                            reason the configuration model does: degree heterogeneity explains some of
+                            Marvel's clustering, not all of it.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="nulls" class="section">
+                <h2>Configuration Model vs. Edge Swap: the Honest Null</h2>
+                <p class="section-intro">
+                    Two ways to build the <em>same intended</em> null — a uniformly random graph with
+                    Marvel's exact degree sequence, nothing else fixed. 100 replicates each. They should
+                    agree. They don't, quite — and the gap is itself informative.
+                </p>
+
+                <div class="card">
+                    <div class="subsection">
+                        <h3>100 configuration-model replicates vs. 100 G(n,m) replicates</h3>
+                        <p>
+                            Configuration-model replicates built from the exact real degree sequence
+                            (<code>nx.configuration_model</code>), with self-loops and parallel edges
+                            dropped afterwards — costing <strong>103.5 links per trial on average (7.3%)</strong>.
+                            <code>G(n,m)</code> replicates for comparison, matching only n and m.
+                        </p>
+                        <figure class="chart">
+                            <img src="images/ex210_config_vs_gnm_clustering.png" alt="Histograms of clustering coefficient across 100 configuration-model and 100 G(n,m) replicates, with the real network's clustering marked as a vertical line far to the right of both distributions">
+                            <figcaption>Clustering coefficient: real Marvel network vs. two null models, 100 replicates each.</figcaption>
+                        </figure>
+                        <div class="callout">
+                            The density-only <code>G(n,m)</code> null is the more naive comparison and
+                            produces the more dramatic-looking gap (z&nbsp;&asymp;&nbsp;103, mean
+                            C&nbsp;=&nbsp;0.037); the degree-preserving configuration model is the fairer
+                            one and still leaves the real value roughly 3&times; higher, at
+                            z&nbsp;&asymp;&nbsp;27 (mean C&nbsp;=&nbsp;0.111). Both empirical p-values sit
+                            at the floor set by only 100 replicates (1/101&nbsp;&asymp;&nbsp;0.0099) — the
+                            real value never once fell inside either null distribution.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Same null, two roads: why 0.11 vs. 0.15?</h3>
+                        <p>
+                            Start from the real network instead, and randomize it in place with
+                            degree-preserving edge swaps (<code>nx.double_edge_swap</code>, 10&times; the
+                            link count as the swap budget). No self-loops or parallel edges are ever
+                            created — the degree sequence is exactly preserved by construction, verified
+                            across all 100 trials.
+                        </p>
+                        <figure class="chart">
+                            <img src="images/ex210_config_vs_swap_clustering.png" alt="Left: histograms comparing clustering coefficient distributions from the configuration model and from double-edge swaps, with edge swaps landing visibly higher. Right: scatter plot showing edges lost to configuration-model cleanup rising sharply with node degree.">
+                            <figcaption>Same intended null, two construction methods — and why they disagree.</figcaption>
+                        </figure>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Configuration model vs. edge swap</caption>
+                                <tbody>
+                                    <tr><td>config-model mean C</td><td class="num">0.111</td></tr>
+                                    <tr><td>edge-swap mean C</td><td class="num">0.154</td></tr>
+                                    <tr><td>real C</td><td class="num">0.320</td></tr>
+                                    <tr><td>edge-swap z-score</td><td class="num">18.7</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Top 5 by avg. edges lost in cleanup</caption>
+                                <thead><tr><th>Character</th><th>degree</th><th>lost/trial</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Spider-Man</td><td class="num">106</td><td class="num">28.7</td></tr>
+                                    <tr><td>Hulk</td><td class="num">65</td><td class="num">12.6</td></tr>
+                                    <tr><td>Wolverine</td><td class="num">63</td><td class="num">11.9</td></tr>
+                                    <tr><td>Doctor Strange</td><td class="num">57</td><td class="num">10.2</td></tr>
+                                    <tr><td>Deadpool</td><td class="num">41</td><td class="num">5.8</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout orange">
+                            <strong>Where the gap comes from:</strong> the two methods are supposed to
+                            sample the <em>same</em> null distribution, but the configuration model only
+                            gets there after deleting the self-loops and parallel edges that stub-matching
+                            inevitably creates — and those deletions aren't spread evenly. Correlation
+                            between a node's degree and how many edges it loses: <strong>r&nbsp;=&nbsp;0.90</strong>.
+                            Spider-Man (degree 106) loses ~29 edges per trial on average; the bottom half
+                            of nodes by degree lose essentially none. The cleaned-up configuration-model
+                            network quietly ends up with <strong>lower-degree hubs</strong> than the real
+                            sequence specifies — exactly where most of the real triangles live — dragging
+                            its clustering below the swap-based null, which never loses an edge and
+                            preserves every node's degree exactly, hubs included.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Transitivity and isolated nodes under both nulls</h3>
+                        <figure class="chart">
+                            <img src="images/ex210_transitivity.png" alt="Histograms of transitivity across configuration-model and edge-swap replicates, with the real network's transitivity marked well to the right of both">
+                            <figcaption>Transitivity: real Marvel network vs. degree-preserving nulls.</figcaption>
+                        </figure>
+                        <p>
+                            Transitivity is extreme under <strong>every</strong> null tried (z&nbsp;&asymp;&nbsp;17
+                            against the configuration model, z&nbsp;&asymp;&nbsp;15 against edge swaps) —
+                            even more so than the average clustering coefficient, because it weights every
+                            triangle equally instead of averaging per-node ratios, so it's pulled hardest
+                            by exactly the hub-heavy triangles that degree alone can't manufacture.
+                        </p>
+                        <div class="callout aqua">
+                            <strong>Isolated nodes are unremarkable under every null</strong> — real = 0,
+                            and every null's mean is &asymp;&nbsp;0 too. That's a <em>structural</em>
+                            result, not a surprising one: restricting to the giant component already
+                            guarantees minimum degree &ge;&nbsp;1, and any null that preserves that same
+                            degree sequence inherits the same guarantee. Picking the right null can make a
+                            question <em>stop being interesting</em> — worth knowing before writing it up
+                            as a finding.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="explorable" class="section">
+                <h2>Stub Pairing: an Interactive Explorable</h2>
+                <p class="section-intro">
+                    Why does cleaning up a configuration model's self-loops and parallel edges cost hubs
+                    so much more than everyone else? Pick a degree sequence, shuffle its stubs, and
+                    watch. Every self-loop (red) and parallel edge (orange, dashed) removed after pairing
+                    is a piece of degree quietly stripped from whichever two nodes happened to be on the
+                    losing end — and the busier a node's stub list, the more chances it gets to lose.
+                </p>
+
+                <div class="card">
+                    <div class="controls">
+                        <select id="stubPreset">
+                            <option value="heavy" selected>Heavy-tailed (Marvel-shaped)</option>
+                            <option value="homogeneous">Homogeneous (no hubs)</option>
+                        </select>
+                        <button id="shuffleBtn">Shuffle Stubs</button>
+                        <button id="trialsBtn" class="secondary">Run 100 Trials</button>
+                        <button id="resetBtn" class="secondary">Reset</button>
+                    </div>
+
+                    <div class="explorable-legend">
+                        <span><span class="swatch" style="background:#2a78d6"></span>kept edge</span>
+                        <span><span class="swatch" style="background:#eb6834"></span>parallel edge (dropped)</span>
+                        <span><span class="swatch" style="background:#e0424f"></span>self-loop (dropped)</span>
+                    </div>
+
+                    <div class="explorable-grid">
+                        <svg id="stubSvg" viewBox="0 0 600 460" role="img" aria-label="Circular diagram of nodes with stubs being paired into edges"></svg>
+                        <div class="explorable-stats" id="stubStats"></div>
+                    </div>
+
+                    <div id="trialsChart"></div>
+
+                    <div class="callout" style="margin-top:18px;">
+                        Switch to <strong>Heavy-tailed</strong> and click <strong>Run 100 Trials</strong>:
+                        the bar chart should look unmistakably like the scatter plot above — edges lost
+                        climbing steeply with degree. Switch to <strong>Homogeneous</strong> and run it
+                        again: with no node standing out in stub count, the losses flatten out almost
+                        completely. That contrast <em>is</em> the mechanism behind the 0.11-vs-0.15
+                        clustering gap, made clickable.
+                    </div>
+                </div>
+            </section>
+
+            <section id="paradox" class="section">
+                <h2>Testing the Friendship Paradox Across Every Model</h2>
+                <p class="section-intro">
+                    Your friends have more friends than you do — on average — whenever the people you
+                    sample as "friends" are picked by <em>following an edge</em>, which oversamples
+                    high-degree nodes in proportion to their degree. The predicted gap is
+                    &#10216;k<sub>friend</sub>&#10217;&nbsp;&asymp;&nbsp;&#10216;k&#10217;&nbsp;+&nbsp;&sigma;&sup2;/&#10216;k&#10217;:
+                    the paradox is driven entirely by the <em>variance</em> of the degree distribution,
+                    not by any particular wiring pattern. 1,000 (node, random-neighbor) pairs sampled
+                    from each of the six networks above.
+                </p>
+
+                <div class="card">
+                    <div class="subsection">
+                        <figure class="chart">
+                            <img src="images/ex210_friendship_paradox.png" alt="Bar chart comparing mean node degree to mean random-neighbor degree across six network types, with a marker for the theoretically predicted friend degree">
+                            <figcaption>The friendship paradox is a degree-variance effect, not a wiring effect.</figcaption>
+                        </figure>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Low-variance degree &rarr; weak paradox</caption>
+                                <tbody>
+                                    <tr><td>G(n,m) random</td><td class="num">1.08&times;</td></tr>
+                                    <tr><td>Watts&ndash;Strogatz (q=0.1)</td><td class="num">1.01&times;</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Heavy-tailed degree &rarr; strong paradox</caption>
+                                <tbody>
+                                    <tr><td><strong>Real Marvel</strong></td><td class="num">2.41&times;</td></tr>
+                                    <tr><td>Edge swap</td><td class="num">2.43&times;</td></tr>
+                                    <tr><td>Configuration model</td><td class="num">2.03&times;</td></tr>
+                                    <tr><td>Barab&aacute;si&ndash;Albert</td><td class="num">2.31&times;</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout aqua">
+                            <strong>The paradox tracks degree variance almost exactly, and nothing else.</strong>
+                            The variance formula predicts each network's sampled friend-degree to within
+                            noise — including for the real Marvel network itself (predicted 22.3 vs.
+                            sampled 24.5). $G(n,m)$ and Watts&ndash;Strogatz both have narrow, near-Poisson
+                            degree distributions (low &sigma;&sup2;), so their friends are barely more
+                            popular than they are. Barab&aacute;si&ndash;Albert's preferential attachment
+                            manufactures a heavy tail and gets most of the way to the real paradox strength
+                            — but the configuration model and edge swap, which <em>exactly</em> copy
+                            Marvel's degree sequence, reproduce the real paradox almost perfectly, because
+                            they were handed the one thing that actually causes it.
+                            <strong>The friendship paradox isn't about who's friends with whom — it's
+                            entirely a consequence of whatever degree distribution the network happens
+                            to have.</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reciprocity" class="section">
+                <h2>Testing a Reciprocity Claim</h2>
+                <p class="section-intro">
+                    The open-ended weekly write-up. A common flawed analysis claims "39% reciprocated
+                    vs. 3% by chance, so reciprocity is 13&times; higher" — without ever running the
+                    numbers under the right null. This does.
+                </p>
+
+                <div class="card">
+                    <div class="subsection">
+                        <h3>Does the reciprocity effect survive a degree-preserving null?</h3>
+                        <p>
+                            The Marvel network's directed graph (303 nodes, 1,784 edges) has
+                            <strong>39.2%</strong> overall reciprocity. The naive same-density null used
+                            in the flawed claim predicts just <strong>1.9%</strong> &mdash; a 20&times;
+                            gap, in the same spirit as the "13&times;" framing. But that null treats every
+                            node as equally likely to link anywhere, which Marvel's hub-heavy degree
+                            sequence makes a poor assumption.
+                        </p>
+                        <figure class="chart">
+                            <img src="images/ex211_reciprocity.png" alt="Histogram of reciprocity across 100 directed configuration-model replicates, with the real network's reciprocity and the naive same-density null both marked as vertical lines">
+                            <figcaption>Reciprocity: real Marvel network vs. a naive same-density null vs. 100 directed configuration-model replicates.</figcaption>
+                        </figure>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Naive same-density null</caption>
+                                <tbody>
+                                    <tr><td>predicted reciprocity</td><td class="num">1.9%</td></tr>
+                                    <tr><td>real / null ratio</td><td class="num">20.1&times;</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Directed configuration model (100 trials)</caption>
+                                <tbody>
+                                    <tr><td>mean reciprocity</td><td class="num">5.1%</td></tr>
+                                    <tr><td>z-score</td><td class="num">57.2</td></tr>
+                                    <tr><td>empirical p-value</td><td class="num">0.0099</td></tr>
+                                    <tr><td>real / null ratio</td><td class="num">7.6&times;</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout aqua">
+                            <strong>The prediction holds up.</strong> Once each node's exact in- and
+                            out-degree is preserved, the null's own reciprocity climbs from 1.9% to
+                            5.1% &mdash; mechanically, because hubs have so many stubs that some of them
+                            land back on each other by chance alone. The real network's excess shrinks
+                            from a dramatic 20&times; down to about <strong>8&times;</strong>. Still highly
+                            significant (z&nbsp;&asymp;&nbsp;57) &mdash; real reciprocation behavior is
+                            genuinely present &mdash; but a fraction of the original inflated headline.
+                        </div>
+                        <div class="callout orange">
+                            <strong>The general lesson:</strong> a "13&times;" or "20&times;" number is
+                            often mostly a statement about which null you picked, not about the network.
+                            Before repeating a multiplier like that in a paper, ask what baseline produced
+                            it &mdash; and whether that baseline controlled for the one thing (here, degree
+                            heterogeneity) that would have explained most of the gap away.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Other directions considered</h3>
+                        <p>
+                            This section is intentionally open-ended; the reciprocity closer above was
+                            chosen because it directly tests a common flawed claim with the right null.
+                            Other suggested directions worth a follow-up:
+                        </p>
+                        <ul style="margin: 0 0 0 20px; color: var(--ink-2);">
+                            <li>Proper CCDF + MLE power-law fitting for the in-degree distribution
+                                (flagged as "confidence: low, eyeball call" back in the
+                                <a href="week1.html#distributions">degree-distribution write-up</a>)
+                                &mdash; a natural next step using the <code>powerlaw</code> package, now
+                                that the model comparison above shows Barab&aacute;si&ndash;Albert gets the
+                                shape roughly right but not the scale.</li>
+                            <li>Which specific characters drive Marvel's friendship paradox, and does
+                                anyone actually beat their own neighbors' average degree? (The comparison
+                                above shows <em>that</em> the paradox is strong here — not <em>who</em> is
+                                responsible.)</li>
+                            <li>Community/team structure directly: the configuration model and edge swap
+                                both fall short of the real clustering by a factor of ~3, which points to
+                                more than just degree heterogeneity — actual team/arc structure is the
+                                likely remainder, and hasn't been tested directly yet.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-nav">
+                <a href="week1.html">&larr; Week 1 &middot; Explorer &amp; Distributions</a>
+                <a class="next" href="index.html">Back to hub &rarr;</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Group Assignment · Network Analysis Project · Data: Wikipedia
+                <em>Category:Marvel Comics superheroes</em> ·
+                Full working notebook:
+                <a href="https://github.com/kaykay-ng/legendary-sniffle/blob/main/notebooks/analysis.ipynb">analysis.ipynb</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/stub_pairing.js"></script>
+</body>
+</html>

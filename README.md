@@ -11,22 +11,21 @@ group-assignment/
 │   └── analysis.ipynb     # Main network analysis notebook
 ├── docs/                  # GitHub Pages (published at your-username.github.io/group-assignment)
 │   ├── index.html                  # Hub — links to every page below
-│   ├── week1.html                  # Network explorer + Exercise 1.6 degree-distribution report
-│   ├── exercise_2_8.html           # Ex. 2.8 — null models (configuration model, edge swaps)
-│   ├── exercise_2_10_11.html       # Ex. 2.10 (stub-pairing explorable) + Ex. 2.11 (free-form)
+│   ├── week1.html                  # Network explorer + degree-distribution report
+│   ├── week2.html                   # Model comparison + explorable, plus a free-form reciprocity write-up
 │   ├── binning_methods.html        # Bonus: linear vs. quantile vs. log binning
-│   ├── degree_distribution_analysis.html  # Bonus: extended Ex. 1.6 write-up
+│   ├── degree_distribution_analysis.html  # Bonus: extended degree-distribution write-up
 │   ├── css/
 │   │   └── style.css      # Shared styling for all pages above (light/dark aware)
 │   ├── js/
 │   │   ├── visualization.js # Network visualization (Cytoscape.js)
-│   │   └── stub_pairing.js  # Ex. 2.10's interactive explorable
+│   │   └── stub_pairing.js  # Interactive stub-pairing explorable
 │   ├── images/             # Charts exported from analysis.ipynb
 │   └── data/
-│       ├── network.json                # Network data file
-│       ├── exercise_1_6_stats.json     # Numbers behind the Exercise 1.6 report
-│       ├── exercise_2_8_stats.json     # Numbers behind the Exercise 2.8 report
-│       └── exercise_2_11_stats.json    # Numbers behind the Exercise 2.11 report
+│       ├── network.json                         # Network data file
+│       ├── exercise_1_6_stats.json               # Numbers behind the degree-distribution report
+│       ├── exercise_2_10_nullmodels_stats.json   # Numbers behind the model comparison
+│       └── exercise_2_11_stats.json              # Numbers behind the reciprocity write-up
 ├── venv/                  # Python virtual environment
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file
