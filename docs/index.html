@@ -137,12 +137,59 @@
                             its first and last integer.
                         </p>
                         <figure class="chart">
-                            <img src="images/log_binning.png" alt="Raw degree distribution points overlaid with the log-binned curve for in-degree and out-degree">
-                            <figcaption>Raw points vs. the log-binned curve — they must coincide exactly while bins are width 1.</figcaption>
+                            <img src="images/log_binning.png" alt="Raw degree distribution points overlaid with the log-binned curve and the CCDF for in-degree and out-degree">
+                            <figcaption>Raw points, the log-binned curve, and the CCDF (P(K&ge;k)) — the CCDF needs no binning at all, since every point already accumulates everything above it.</figcaption>
                         </figure>
                         <div class="callout aqua">
                             Calibration check passed: maximum difference between raw and binned values in
                             the width-1 region is <strong>0.0</strong>.
+                        </div>
+                        <div class="callout">
+                            <strong>The CCDF's smoothness isn't evidence of a power law.</strong> It tracks
+                            the raw distribution's overall shape more cleanly than the raw points do, simply
+                            because it's a running cumulative sum — every point folds in everything above it,
+                            so it never hits the empty-bin gaps the raw tail suffers from. That's a property
+                            of <em>any</em> distribution's CCDF, heavy-tailed or not. A genuine power law needs
+                            the CCDF to trace a <em>straight line</em> on these log-log axes, and here it
+                            visibly curves rather than sitting on one straight slope — so "smooth" and
+                            "power-law" are two different claims, and only the fitted-straight-line one would
+                            actually support scale-free structure.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>3b. Random graph, or Barabási–Albert?</h3>
+                        <p>
+                            The CCDF above stays nonzero all the way out to <em>k</em>&nbsp;=&nbsp;107
+                            (Spider-Man) — a random graph this size can't do that; a same-size
+                            <code>G(n,m)</code> random graph tops out around max degree&nbsp;20. To test the
+                            alternative, a Barabási&ndash;Albert network was generated at Marvel's own size
+                            (n&nbsp;=&nbsp;303, not 5,000 — a bigger BA network gets an unfairly longer tail
+                            purely from having more nodes) with <em>m</em>&nbsp;=&nbsp;5, chosen to match
+                            Marvel's edge density (1,434&nbsp;/&nbsp;303&nbsp;&asymp;&nbsp;4.73).
+                        </p>
+                        <figure class="chart">
+                            <img src="images/ba_vs_marvel_ccdf.png" alt="CCDF overlay of Marvel's real in-degree distribution against a size-matched Barabasi-Albert network, with a dashed line marking BA's structural minimum degree">
+                            <figcaption>Marvel vs. a size-matched BA(303, m=5) network. The dashed line marks BA's structural floor — it cannot produce a node below degree m.</figcaption>
+                        </figure>
+                        <div class="callout">
+                            <strong>Learning: BA has a hard minimum degree, real networks don't.</strong>
+                            Every node in a BA(n, m) network is born already holding exactly <em>m</em> edges
+                            — that's the price of joining — and edges are never removed, so no node can ever
+                            fall below degree <em>m</em>. With m&nbsp;=&nbsp;5, BA(303,&nbsp;5) simply cannot
+                            produce anything below degree 5. Marvel has no such floor: 19% of characters are
+                            isolates (in-degree 0), and 63% sit below degree 5. So the size-matched BA curve
+                            necessarily overshoots Marvel at low <em>k</em> — that gap isn't evidence against
+                            preferential attachment, it's a structural artifact of the model.
+                            <br><br>
+                            This also means <em>m</em> can't be tuned to fix both ends at once: dropping to
+                            m&nbsp;=&nbsp;1 lowers the floor to 1, but starves the network of edges (302 total
+                            vs. Marvel's 1,434), so the tail collapses instead (max degree 49 vs. 77 at
+                            m&nbsp;=&nbsp;5) and BA now undershoots Marvel everywhere. The one comparison that
+                            <em>is</em> fair is the tail past k&nbsp;&asymp;&nbsp;10, where BA has no more
+                            structural constraints — there, both curves decay gradually and stay nonzero out
+                            into the tens, unlike a random graph's CCDF, which is already flat near zero by
+                            k&nbsp;&asymp;&nbsp;20&ndash;30.
                         </div>
                     </div>
 
