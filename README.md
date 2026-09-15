@@ -10,15 +10,23 @@ group-assignment/
 ├── notebooks/             # Jupyter notebooks for analysis
 │   └── analysis.ipynb     # Main network analysis notebook
 ├── docs/                  # GitHub Pages (published at your-username.github.io/group-assignment)
-│   ├── index.html         # Network explorer + Exercise 1.6 degree-distribution report
+│   ├── index.html                  # Hub — links to every page below
+│   ├── week1.html                  # Network explorer + Exercise 1.6 degree-distribution report
+│   ├── exercise_2_8.html           # Ex. 2.8 — null models (configuration model, edge swaps)
+│   ├── exercise_2_10_11.html       # Ex. 2.10 (stub-pairing explorable) + Ex. 2.11 (free-form)
+│   ├── binning_methods.html        # Bonus: linear vs. quantile vs. log binning
+│   ├── degree_distribution_analysis.html  # Bonus: extended Ex. 1.6 write-up
 │   ├── css/
-│   │   └── style.css      # Styling
+│   │   └── style.css      # Shared styling for all pages above (light/dark aware)
 │   ├── js/
-│   │   └── visualization.js # Network visualization (Cytoscape.js)
-│   ├── images/            # Charts exported from analysis.ipynb (Exercise 1.6)
+│   │   ├── visualization.js # Network visualization (Cytoscape.js)
+│   │   └── stub_pairing.js  # Ex. 2.10's interactive explorable
+│   ├── images/             # Charts exported from analysis.ipynb
 │   └── data/
-│       ├── network.json             # Network data file
-│       └── exercise_1_6_stats.json  # Numbers behind the Exercise 1.6 report
+│       ├── network.json                # Network data file
+│       ├── exercise_1_6_stats.json     # Numbers behind the Exercise 1.6 report
+│       ├── exercise_2_8_stats.json     # Numbers behind the Exercise 2.8 report
+│       └── exercise_2_11_stats.json    # Numbers behind the Exercise 2.11 report
 ├── venv/                  # Python virtual environment
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file
