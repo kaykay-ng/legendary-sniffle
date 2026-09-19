@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popularity vs. Being Load-Bearing</title>
+    <meta name="description" content="A log-log scatter of betweenness against degree on the Marvel character network surfaces Rockman_(character) — degree 2, yet the single largest residual in the whole giant component — plus two other bridge characters degree alone would never surface, and a live explorable that isolates why.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <nav class="nav">
+                <a href="index.html">Hub</a>
+                <a href="week1.html">Week 1 · Explorer &amp; Distributions</a>
+                <a href="week2.html">Week 2 · Model Comparison</a>
+                <a href="week3.html" class="active">Week 3 · Popularity vs. Load-Bearing</a>
+            </nav>
+            <nav class="nav-banner">
+                On this page:
+                <a href="#rockman">The Rockman surprise</a> ·
+                <a href="#other-bridges">Other bridges degree misses</a> ·
+                <a href="#giant-explorer">Try it on the real network</a> ·
+                <a href="#try-it">Isolate the mechanism</a>
+            </nav>
+            <div class="hero-eyebrow">02805 · Social Graphs and Interactions · Week 3</div>
+            <h1>Popularity vs. Being Load-Bearing</h1>
+            <p class="lede">
+                Degree measures how many connections a character has. Betweenness measures how many
+                shortest paths depend on them. On the Marvel character network's giant component,
+                plotting one against the other on a log&ndash;log scale &mdash; then asking who
+                over-performs what their own degree predicts &mdash; surfaces a character with only two
+                connections who turns out to be structurally irreplaceable, and a handful of other
+                genuine bridges that raw popularity alone would never reveal.
+            </p>
+            <div class="stat-row" id="heroStats">
+                <div class="stat-tile"><div class="value">~105&times;</div><div class="label">more central than his degree predicts</div></div>
+                <div class="stat-tile"><div class="value">2</div><div class="label">Rockman's degree &mdash; that's it</div></div>
+                <div class="stat-tile"><div class="value">275</div><div class="label">shortest paths that depend on him</div></div>
+                <div class="stat-tile"><div class="value">1</div><div class="label">node he single-handedly keeps connected</div></div>
+            </div>
+        </header>
+
+        <main>
+            <section id="betweenness" class="section">
+                <div id="rockman"></div>
+                <h2>The Rockman Surprise</h2>
+                <p class="section-intro">
+                    A log-log scatter of betweenness centrality against degree, fit with a trend line,
+                    surfaces which nodes over- or under-perform what their own degree would predict.
+                </p>
+
+                <div class="discussion-question">
+                    <div class="dq-label">Discussion question</div>
+                    <p class="dq-text">
+                        &ldquo;Who is the most surprising character in the network by any centrality,
+                        against the right null? Make the case, with a figure, and tell us what they
+                        bridge.&rdquo;
+                    </p>
+                    <div class="dq-answer-label">Answer</div>
+                    <p>
+                        <strong>Rockman_(character)</strong>. Degree 2 &mdash; connected only to
+                        Black_Widow_(Natasha_Romanova) and The_Witness_(character) &mdash; yet the single
+                        largest positive residual in the entire betweenness-vs-degree scatter below:
+                        <strong>+2.02</strong>, far above what any other degree-2 node reaches.
+                    </p>
+                    <figure class="chart" style="margin: 14px 0;">
+                        <img src="images/week3_betweenness_vs_degree.png" alt="Log-log scatter of betweenness centrality vs. degree for the giant component, with a fitted trend line and outliers labeled; Rockman_(character) is the single largest positive residual, far above the trend">
+                        <figcaption>Betweenness vs. degree, giant component (log&ndash;log). Rockman sits alone, far above the fitted trend &mdash; the headline point of the whole plot.</figcaption>
+                    </figure>
+                    <p>
+                        The reason: The_Witness_(character) is a degree-1 dead end, and Rockman is its
+                        <em>only</em> link to the rest of the network. Every shortest path from
+                        The_Witness_(character) to anyone else has to pass through him &mdash; so low
+                        degree doesn't mean low importance, if you happen to be someone's sole bridge to
+                        everywhere else.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="callout">
+                        <strong>What surprised me:</strong> betweenness centrality alone can actually
+                        <em>overstate</em> a node's importance. Rockman's whole score comes from one fact
+                        &mdash; Witness has no other way out &mdash; not from bridging anything large or
+                        structurally significant. Look at his <em>actual</em> impact on the network
+                        instead of his betweenness value: removing him leaves a giant component of 275
+                        nodes, exactly tied with Deadpool, Deathlok, Genis-Vell, Guardsman_(character),
+                        Moon_Knight, and Nightmask &mdash; completely unremarkable, nowhere near
+                        Spider-Man (271, and it fragments into 6 pieces instead of 2). What's genuinely
+                        unusual about Rockman isn't his importance to the network &mdash; it's his
+                        <em>efficiency</em>: no other node gets this much betweenness from only 2
+                        connections. The real claim this page is making is narrower, and more honest,
+                        than "most important character": Rockman is the most surprising character
+                        <em>relative to what his own degree predicts</em>, not the most structurally
+                        critical one.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="subsection">
+                        <h3 id="other-bridges">Beyond Spider-Man: bridges the degree top-10 misses</h3>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Betweenness top-10, not degree top-10</caption>
+                                <thead><tr><th>character</th><th>role</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Hercules_(Marvel_Comics)</td><td>bridges cosmic/Avengers-adjacent characters (Ares, Star-Lord, Rocket Raccoon) to street-level heroes</td></tr>
+                                    <tr><td>Black_Widow_(Natasha_Romanova)</td><td>bridges the spy/espionage cluster (Hawkeye, Mockingbird, Yelena Belova) to the mainstream hero core; shares only 4 neighbors with Hercules despite similar degree</td></tr>
+                                    <tr><td>U.S._Agent</td><td>connects a cluster of lower-degree military/team-support characters (Battlestar, Guardsman, Thin Man, Paladin, Blazing Skull, Union Jack) directly into the network's biggest hubs (Spider-Man, Wolverine, Scarlet Witch, Hank Pym, Moon Knight)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout orange">
+                            U.S. Agent is arguably the most interesting of the three: comparatively
+                            obscure by degree, yet he single-handedly props up an entire peripheral
+                            cluster's access to the rest of the network. Betweenness surfaces this kind
+                            of structural importance precisely because raw popularity (degree) never
+                            would.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="giant-explorer" class="section">
+                <h2>Try It on the Real Network</h2>
+                <p class="section-intro">
+                    The full 277-node giant component renders as an unreadable hairball, so pick a
+                    smaller, self-contained neighborhood to browse instead &mdash; computed on the fly
+                    with the same breadth-first search from earlier, just bounded to a fixed number of
+                    hops from one (or several) characters. Click any node to remove it: node
+                    <strong>size</strong> is degree (how many connections, right now &mdash; it shrinks
+                    live as you cut a node's neighbors), and node <strong>color</strong> is betweenness
+                    centrality on a sequential scale from pale lilac to deep purple &mdash; a
+                    from-scratch Brandes' algorithm running in your browser, recomputed and cached once
+                    per click rather than continuously. Faded, translucent nodes have been stranded
+                    outside the current biggest cluster.
+                </p>
+                <p class="section-intro">
+                    Each view below combines two or three bridge characters' neighborhoods into one:
+                    a single character's 1-hop neighborhood alone is basically a star, where every
+                    shortest path already runs through the center and betweenness has nowhere to
+                    redistribute onto as you remove nodes. These combined views avoid that &mdash; each
+                    pair's neighborhoods overlap only at a couple of shared hub characters, so removing
+                    one bridge forces its leftover neighbors to route through whatever connection is
+                    left. Watch for a small, pale node that suddenly darkens once its neighborhood's
+                    other exit disappears.
+                </p>
+
+                <div class="card">
+                    <div class="controls">
+                        <select id="giantPresetSelect">
+                            <option value="hercules_usagent">Hercules + U.S. Agent together (47 nodes)</option>
+                            <option value="hercules_blackwidow">Hercules + Black Widow together (48 nodes)</option>
+                            <option value="blackwidow_usagent">Black Widow + U.S. Agent together (43 nodes)</option>
+                            <option value="all_three">All three bridges together (65 nodes)</option>
+                        </select>
+                        <button id="giantResetBtn" class="secondary">Reset this view</button>
+                    </div>
+                    <div class="giant-explorer-stats">
+                        <span>Removed <b id="giantStatRemoved">0</b> / <b id="giantStatTotal">47</b></span>
+                        <span>Giant component <b id="giantStatGiant">47</b></span>
+                        <span>Fragments <b id="giantStatFragments">1</b></span>
+                        <span>Most central right now <b id="giantStatTop">&mdash;</b></span>
+                    </div>
+                </div>
+
+                <div class="explorer-breakout">
+                    <div id="giantCy"></div>
+                    <div id="giantTooltip"></div>
+                </div>
+
+                <div class="card" style="margin-top: 16px;">
+                    <div class="callout">
+                        Each pairing puts two of the bridge characters from earlier in the same view:
+                        <strong>Hercules</strong> (cosmic/Avengers-adjacent teammates), <strong>Black
+                        Widow</strong> (the spy/espionage cluster), and <strong>U.S. Agent</strong> (a
+                        cluster of lower-profile military/team-support characters) each anchor their own
+                        corner, joined to the others only through a couple of shared hub characters
+                        &mdash; Spider-Man and Wolverine show up again and again. Try
+                        <strong>Hercules&nbsp;+&nbsp;U.S.&nbsp;Agent</strong> and click Hercules first:
+                        Ares_(Marvel_Comics) &mdash; still just degree 3 &mdash; jumps roughly 4.7&times; in
+                        betweenness as soon as Hercules is gone, becoming a brand-new bridge in a network
+                        he wasn't previously load-bearing in at all. <strong>All three bridges
+                        together</strong> gives the richest version of this: three separate
+                        neighborhoods, several shared hub connectors, and the most room for betweenness to
+                        genuinely move around as you remove nodes. Rockman_(character) himself doesn't
+                        appear in any of these views &mdash; his effect depends on a degree-1 dead end
+                        (The_Witness_(character)) that none of these neighborhoods happen to include; see
+                        the figure above and the isolated toy demo below for that mechanism specifically.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="card">
+                    <div class="subsection">
+                        <h3 id="try-it">Try it: the Rockman effect, isolated</h3>
+                        <p>
+                            A small synthetic graph: a dense 5-node hub clique, one bridge node with
+                            degree exactly 2, and a variable number of leaves hanging off the bridge.
+                            Betweenness recomputed live (Brandes' algorithm) as you drag the slider.
+                        </p>
+                        <div class="controls">
+                            <div class="range-control">
+                                Leaves hanging off the bridge
+                                <input type="range" id="bridgeLeaves" min="1" max="18" value="6" step="1">
+                                <span id="bridgeLeavesVal">6</span>
+                            </div>
+                            <label class="checkbox-control">
+                                <input type="checkbox" id="bridgeShortcut">
+                                give leaves a back door straight to the hub
+                            </label>
+                        </div>
+                        <div class="explorable-grid">
+                            <svg id="bridgeSvg" viewBox="0 0 640 340" role="img" aria-label="Diagram of a hub clique, a bridge node, and a variable number of leaf nodes"></svg>
+                            <div class="explorable-stats" id="bridgeStats"></div>
+                        </div>
+                        <div class="callout" style="margin-top: 18px;">
+                            Drag "leaves" up: the bridge's degree never changes &mdash; it always has
+                            exactly 2 neighbors, the hub side and one leaf-facing side &mdash; but its
+                            betweenness climbs because more nodes depend on it as their only route.
+                            Now tick the "back door" box: once leaves have an alternative path to the
+                            hub, the bridge's betweenness collapses toward zero even though nothing
+                            about its own degree changed. That's the Rockman effect, isolated.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-nav">
+                <a href="week2.html">&larr; Week 2 &middot; Model Comparison</a>
+                <a class="next" href="index.html">Back to hub &rarr;</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Group Assignment · Network Analysis Project · Data: Wikipedia
+                <em>Category:Marvel Comics superheroes</em> ·
+                Full working notebook:
+                <a href="https://github.com/kaykay-ng/legendary-sniffle/blob/main/notebooks/analysis.ipynb">analysis.ipynb</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/week3_giant_explorer.js"></script>
+    <script src="js/week3_bridge.js"></script>
+</body>
+</html>

@@ -12,6 +12,10 @@
   --blue: #2a78d6;
   --orange: #eb6834;
   --aqua: #1baf7a;
+  --gold: #b8860b;
+  --gold-wash: #fbf1dc;
+  --bc-low: #ece0f7;
+  --bc-high: #6a3fa0;
   --radius: 14px;
 }
 
@@ -30,6 +34,10 @@
     --blue: #3987e5;
     --orange: #d95926;
     --aqua: #199e70;
+    --gold: #d4a017;
+    --gold-wash: #2a2313;
+    --bc-low: #3a2f4a;
+    --bc-high: #cba3f5;
   }
 }
 
@@ -622,4 +630,159 @@ footer a {
   .explorable-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ---------- Discussion question spotlight ---------- */
+
+.discussion-question {
+  background: var(--gold-wash);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin: 20px 0 24px;
+  box-shadow: var(--shadow);
+}
+
+.discussion-question .dq-label {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.discussion-question .dq-text {
+  font-size: 1.2em;
+  font-style: italic;
+  color: var(--ink);
+  max-width: 60ch;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.discussion-question .dq-answer-label {
+  color: var(--ink-2);
+  font-weight: 700;
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.discussion-question p {
+  color: var(--ink-2);
+  max-width: 74ch;
+  margin-bottom: 12px;
+}
+
+.discussion-question p:last-child {
+  margin-bottom: 0;
+}
+
+.discussion-question strong {
+  color: var(--ink);
+}
+
+/* ---------- Explorable: Betweenness Bridge (Week 3) ---------- */
+
+.controls input[type="range"] {
+  accent-color: var(--blue);
+  width: 180px;
+}
+
+.controls .range-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88em;
+  color: var(--ink-2);
+}
+
+.controls label.checkbox-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88em;
+  color: var(--ink-2);
+}
+
+.controls label.checkbox-control input {
+  accent-color: var(--blue);
+  width: 16px;
+  height: 16px;
+}
+
+#bridgeSvg {
+  width: 100%;
+  height: auto;
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* ---------- Explorable: Giant Component Explorer (Week 3) ---------- */
+
+/* Breaks out of .page's 1180px cap so the network gets real room to breathe. */
+.explorer-breakout {
+  width: 80vw;
+  max-width: 80vw;
+  margin-left: calc(50% - 40vw);
+  margin-right: calc(50% - 40vw);
+}
+
+#giantCy {
+  width: 100%;
+  height: 80vh;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.giant-explorer-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  color: var(--ink-2);
+  margin-bottom: 12px;
+}
+
+.giant-explorer-stats b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+#giantTooltip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.82em;
+  box-shadow: var(--shadow);
+  z-index: 50;
+  display: none;
+  max-width: 220px;
+  line-height: 1.5;
+}
+
+#giantTooltip .name {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1.02em;
+}
+
+@media (max-width: 900px) {
+  .explorer-breakout {
+    width: 94vw;
+    max-width: 94vw;
+    margin-left: calc(50% - 47vw);
+    margin-right: calc(50% - 47vw);
+  }
+  #giantCy { height: 62vh; }
 }
