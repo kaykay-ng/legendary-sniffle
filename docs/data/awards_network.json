@@ -1,0 +1,1841 @@
+{
+ "awards": [
+  {
+   "key": "one_good_friend",
+   "title": "One Good Friend",
+   "headliners": [
+    "Enigma_(Marvel_Comics)",
+    "Ethan_Edwards",
+    "Helix_(Marvel_Comics)",
+    "NFL_SuperPro",
+    "Thunderclap_(comics)",
+    "Scorpio_(Marvel_Comics)"
+   ],
+   "nodes": [
+    {
+     "id": "Enigma_(Marvel_Comics)",
+     "name": "Enigma (Marvel Comics)",
+     "role": "headliner",
+     "deg": 1,
+     "clo": 0.3735,
+     "bet": 0.0,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 1
+    },
+    {
+     "id": "Ethan_Edwards",
+     "name": "Ethan Edwards",
+     "role": "headliner",
+     "deg": 1,
+     "clo": 0.3735,
+     "bet": 0.0,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 1
+    },
+    {
+     "id": "Helix_(Marvel_Comics)",
+     "name": "Helix (Marvel Comics)",
+     "role": "headliner",
+     "deg": 1,
+     "clo": 0.3735,
+     "bet": 0.0,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 1
+    },
+    {
+     "id": "NFL_SuperPro",
+     "name": "NFL SuperPro",
+     "role": "headliner",
+     "deg": 1,
+     "clo": 0.3735,
+     "bet": 0.0,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 1
+    },
+    {
+     "id": "Thunderclap_(comics)",
+     "name": "Thunderclap (comics)",
+     "role": "headliner",
+     "deg": 1,
+     "clo": 0.3735,
+     "bet": 0.0,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 1
+    },
+    {
+     "id": "Scorpio_(Marvel_Comics)",
+     "name": "Scorpio (Marvel Comics)",
+     "role": "headliner",
+     "deg": 2,
+     "clo": 0.3904,
+     "bet": 0.0,
+     "clu": 1.0,
+     "indeg": 0,
+     "outdeg": 2
+    },
+    {
+     "id": "Spider-Man",
+     "name": "Spider-Man",
+     "role": "context",
+     "deg": 106,
+     "clo": 0.5948,
+     "bet": 0.23495,
+     "clu": 0.083,
+     "indeg": 106,
+     "outdeg": 9
+    },
+    {
+     "id": "Wolverine_(character)",
+     "name": "Wolverine (character)",
+     "role": "context",
+     "deg": 63,
+     "clo": 0.5237,
+     "bet": 0.09247,
+     "clu": 0.118,
+     "indeg": 60,
+     "outdeg": 17
+    }
+   ],
+   "edges": [
+    {
+     "source": "Thunderclap_(comics)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Scorpio_(Marvel_Comics)"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Ethan_Edwards",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Enigma_(Marvel_Comics)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "NFL_SuperPro",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Scorpio_(Marvel_Comics)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Helix_(Marvel_Comics)"
+    }
+   ]
+  },
+  {
+   "key": "popular_but_replaceable",
+   "title": "Popular But Replaceable",
+   "headliners": [
+    "Spider-Woman",
+    "Satana_(Marvel_Comics)"
+   ],
+   "nodes": [
+    {
+     "id": "Silk_(character)",
+     "name": "Silk (character)",
+     "role": "context",
+     "deg": 12,
+     "clo": 0.396,
+     "bet": 0.00167,
+     "clu": 0.5,
+     "indeg": 10,
+     "outdeg": 4
+    },
+    {
+     "id": "Eddie_Brock",
+     "name": "Eddie Brock",
+     "role": "context",
+     "deg": 22,
+     "clo": 0.4367,
+     "bet": 0.00929,
+     "clu": 0.221,
+     "indeg": 11,
+     "outdeg": 16
+    },
+    {
+     "id": "Spider-Woman",
+     "name": "Spider-Woman",
+     "role": "headliner",
+     "deg": 17,
+     "clo": 0.4163,
+     "bet": 0.00299,
+     "clu": 0.331,
+     "indeg": 10,
+     "outdeg": 12
+    },
+    {
+     "id": "Spider-Woman_(Jessica_Drew)",
+     "name": "Spider-Woman (Jessica Drew)",
+     "role": "context",
+     "deg": 22,
+     "clo": 0.4326,
+     "bet": 0.00734,
+     "clu": 0.221,
+     "indeg": 16,
+     "outdeg": 11
+    },
+    {
+     "id": "Doctor_Druid",
+     "name": "Doctor Druid",
+     "role": "context",
+     "deg": 9,
+     "clo": 0.3932,
+     "bet": 0.00371,
+     "clu": 0.167,
+     "indeg": 5,
+     "outdeg": 4
+    },
+    {
+     "id": "Black_Widow_(Natasha_Romanova)",
+     "name": "Black Widow (Natasha Romanova)",
+     "role": "context",
+     "deg": 25,
+     "clo": 0.46,
+     "bet": 0.03512,
+     "clu": 0.147,
+     "indeg": 22,
+     "outdeg": 7
+    },
+    {
+     "id": "Ghost_Rider",
+     "name": "Ghost Rider",
+     "role": "context",
+     "deg": 22,
+     "clo": 0.4525,
+     "bet": 0.01291,
+     "clu": 0.255,
+     "indeg": 13,
+     "outdeg": 15
+    },
+    {
+     "id": "She-Hulk",
+     "name": "She-Hulk",
+     "role": "context",
+     "deg": 37,
+     "clo": 0.4817,
+     "bet": 0.0398,
+     "clu": 0.135,
+     "indeg": 29,
+     "outdeg": 20
+    },
+    {
+     "id": "Star-Lord",
+     "name": "Star-Lord",
+     "role": "context",
+     "deg": 17,
+     "clo": 0.4423,
+     "bet": 0.00828,
+     "clu": 0.272,
+     "indeg": 12,
+     "outdeg": 10
+    },
+    {
+     "id": "Ghost_Rider_(Johnny_Blaze)",
+     "name": "Ghost Rider (Johnny Blaze)",
+     "role": "context",
+     "deg": 15,
+     "clo": 0.4326,
+     "bet": 0.00446,
+     "clu": 0.352,
+     "indeg": 10,
+     "outdeg": 8
+    },
+    {
+     "id": "Anya_Corazon",
+     "name": "Anya Corazon",
+     "role": "context",
+     "deg": 16,
+     "clo": 0.4017,
+     "bet": 0.00581,
+     "clu": 0.25,
+     "indeg": 10,
+     "outdeg": 12
+    },
+    {
+     "id": "Spider-Woman_(Gwen_Stacy)",
+     "name": "Spider-Woman (Gwen Stacy)",
+     "role": "context",
+     "deg": 18,
+     "clo": 0.4059,
+     "bet": 0.00559,
+     "clu": 0.386,
+     "indeg": 12,
+     "outdeg": 14
+    },
+    {
+     "id": "Black_Cat_(Marvel_Comics)",
+     "name": "Black Cat (Marvel Comics)",
+     "role": "context",
+     "deg": 28,
+     "clo": 0.4502,
+     "bet": 0.00715,
+     "clu": 0.246,
+     "indeg": 21,
+     "outdeg": 14
+    },
+    {
+     "id": "Mayday_Parker",
+     "name": "Mayday Parker",
+     "role": "context",
+     "deg": 18,
+     "clo": 0.4175,
+     "bet": 0.00466,
+     "clu": 0.366,
+     "indeg": 14,
+     "outdeg": 14
+    },
+    {
+     "id": "Mockingbird_(Marvel_Comics)",
+     "name": "Mockingbird (Marvel Comics)",
+     "role": "context",
+     "deg": 21,
+     "clo": 0.4416,
+     "bet": 0.01225,
+     "clu": 0.195,
+     "indeg": 13,
+     "outdeg": 11
+    },
+    {
+     "id": "Deadpool",
+     "name": "Deadpool",
+     "role": "context",
+     "deg": 41,
+     "clo": 0.4937,
+     "bet": 0.05599,
+     "clu": 0.137,
+     "indeg": 33,
+     "outdeg": 19
+    },
+    {
+     "id": "Man-Thing",
+     "name": "Man-Thing",
+     "role": "context",
+     "deg": 20,
+     "clo": 0.4388,
+     "bet": 0.00821,
+     "clu": 0.237,
+     "indeg": 15,
+     "outdeg": 12
+    },
+    {
+     "id": "Spider-Man",
+     "name": "Spider-Man",
+     "role": "context",
+     "deg": 106,
+     "clo": 0.5948,
+     "bet": 0.23495,
+     "clu": 0.083,
+     "indeg": 106,
+     "outdeg": 9
+    },
+    {
+     "id": "Doctor_Strange",
+     "name": "Doctor Strange",
+     "role": "context",
+     "deg": 57,
+     "clo": 0.5169,
+     "bet": 0.08267,
+     "clu": 0.135,
+     "indeg": 50,
+     "outdeg": 17
+    },
+    {
+     "id": "Satana_(Marvel_Comics)",
+     "name": "Satana (Marvel Comics)",
+     "role": "headliner",
+     "deg": 10,
+     "clo": 0.4126,
+     "bet": 0.00048,
+     "clu": 0.578,
+     "indeg": 4,
+     "outdeg": 7
+    },
+    {
+     "id": "Anne_Weying",
+     "name": "Anne Weying",
+     "role": "context",
+     "deg": 5,
+     "clo": 0.3954,
+     "bet": 8e-05,
+     "clu": 0.7,
+     "indeg": 3,
+     "outdeg": 4
+    },
+    {
+     "id": "Jericho_Drumm",
+     "name": "Jericho Drumm",
+     "role": "context",
+     "deg": 15,
+     "clo": 0.4132,
+     "bet": 0.00303,
+     "clu": 0.219,
+     "indeg": 13,
+     "outdeg": 7
+    },
+    {
+     "id": "Blade_(character)",
+     "name": "Blade (character)",
+     "role": "context",
+     "deg": 22,
+     "clo": 0.4452,
+     "bet": 0.00839,
+     "clu": 0.294,
+     "indeg": 17,
+     "outdeg": 12
+    },
+    {
+     "id": "Yelena_Belova",
+     "name": "Yelena Belova",
+     "role": "context",
+     "deg": 7,
+     "clo": 0.3603,
+     "bet": 0.00049,
+     "clu": 0.333,
+     "indeg": 2,
+     "outdeg": 6
+    },
+    {
+     "id": "Spider-Bitch_(Ashley_Barton)",
+     "name": "Spider-Bitch (Ashley Barton)",
+     "role": "context",
+     "deg": 16,
+     "clo": 0.4381,
+     "bet": 0.00276,
+     "clu": 0.383,
+     "indeg": 2,
+     "outdeg": 15
+    },
+    {
+     "id": "Human_Fly_(character)",
+     "name": "Human Fly (character)",
+     "role": "context",
+     "deg": 5,
+     "clo": 0.3823,
+     "bet": 0.00038,
+     "clu": 0.4,
+     "indeg": 0,
+     "outdeg": 5
+    },
+    {
+     "id": "Luke_Cage",
+     "name": "Luke Cage",
+     "role": "context",
+     "deg": 28,
+     "clo": 0.4532,
+     "bet": 0.01665,
+     "clu": 0.198,
+     "indeg": 25,
+     "outdeg": 9
+    },
+    {
+     "id": "Spider-Girl",
+     "name": "Spider-Girl",
+     "role": "context",
+     "deg": 14,
+     "clo": 0.4083,
+     "bet": 0.00184,
+     "clu": 0.341,
+     "indeg": 5,
+     "outdeg": 12
+    }
+   ],
+   "edges": [
+    {
+     "source": "Silk_(character)",
+     "target": "Black_Cat_(Marvel_Comics)"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Eddie_Brock"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Mayday_Parker"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Spider-Woman"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Spider-Woman_(Gwen_Stacy)"
+    },
+    {
+     "source": "Silk_(character)",
+     "target": "Spider-Woman_(Jessica_Drew)"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "Anne_Weying"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "Black_Cat_(Marvel_Comics)"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "Black_Widow_(Natasha_Romanova)"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "She-Hulk"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "Spider-Woman"
+    },
+    {
+     "source": "Eddie_Brock",
+     "target": "Spider-Woman_(Gwen_Stacy)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Anne_Weying"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Anya_Corazon"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Black_Widow_(Natasha_Romanova)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Human_Fly_(character)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Mayday_Parker"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Mockingbird_(Marvel_Comics)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "She-Hulk"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Spider-Woman_(Gwen_Stacy)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Spider-Woman_(Jessica_Drew)"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Star-Lord"
+    },
+    {
+     "source": "Spider-Woman",
+     "target": "Yelena_Belova"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Anya_Corazon"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Black_Cat_(Marvel_Comics)"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Black_Widow_(Natasha_Romanova)"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Human_Fly_(character)"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Mayday_Parker"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Spider-Woman_(Jessica_Drew)",
+     "target": "Spider-Woman_(Gwen_Stacy)"
+    },
+    {
+     "source": "Doctor_Druid",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Doctor_Druid",
+     "target": "Man-Thing"
+    },
+    {
+     "source": "Doctor_Druid",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Ghost_Rider_(Johnny_Blaze)"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Yelena_Belova"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Deadpool"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Mockingbird_(Marvel_Comics)"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Deadpool"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Ghost_Rider_(Johnny_Blaze)"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Jericho_Drumm"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Ghost_Rider",
+     "target": "Spider-Woman_(Gwen_Stacy)"
+    },
+    {
+     "source": "She-Hulk",
+     "target": "Deadpool"
+    },
+    {
+     "source": "She-Hulk",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "She-Hulk",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "She-Hulk",
+     "target": "Man-Thing"
+    },
+    {
+     "source": "She-Hulk",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Star-Lord",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Star-Lord",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Star-Lord",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Ghost_Rider_(Johnny_Blaze)",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Ghost_Rider_(Johnny_Blaze)",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Ghost_Rider_(Johnny_Blaze)",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Ghost_Rider_(Johnny_Blaze)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Anya_Corazon",
+     "target": "Mayday_Parker"
+    },
+    {
+     "source": "Anya_Corazon",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Anya_Corazon",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Anya_Corazon",
+     "target": "Spider-Woman_(Gwen_Stacy)"
+    },
+    {
+     "source": "Spider-Woman_(Gwen_Stacy)",
+     "target": "Black_Cat_(Marvel_Comics)"
+    },
+    {
+     "source": "Spider-Woman_(Gwen_Stacy)",
+     "target": "Mayday_Parker"
+    },
+    {
+     "source": "Spider-Woman_(Gwen_Stacy)",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Spider-Woman_(Gwen_Stacy)",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Spider-Woman_(Gwen_Stacy)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Jericho_Drumm"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Mayday_Parker"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Black_Cat_(Marvel_Comics)",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Mayday_Parker",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Mayday_Parker",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Mayday_Parker",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Mockingbird_(Marvel_Comics)",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Mockingbird_(Marvel_Comics)",
+     "target": "Man-Thing"
+    },
+    {
+     "source": "Mockingbird_(Marvel_Comics)",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Mockingbird_(Marvel_Comics)",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Mockingbird_(Marvel_Comics)",
+     "target": "Yelena_Belova"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Anne_Weying"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Man-Thing",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Man-Thing",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Man-Thing",
+     "target": "Jericho_Drumm"
+    },
+    {
+     "source": "Man-Thing",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Man-Thing",
+     "target": "Spider-Man"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Anne_Weying"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Doctor_Strange"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Human_Fly_(character)"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Spider-Bitch_(Ashley_Barton)"
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Spider-Girl"
+    },
+    {
+     "source": "Doctor_Strange",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Doctor_Strange",
+     "target": "Jericho_Drumm"
+    },
+    {
+     "source": "Doctor_Strange",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "Doctor_Strange",
+     "target": "Satana_(Marvel_Comics)"
+    },
+    {
+     "source": "Satana_(Marvel_Comics)",
+     "target": "Blade_(character)"
+    },
+    {
+     "source": "Satana_(Marvel_Comics)",
+     "target": "Jericho_Drumm"
+    },
+    {
+     "source": "Jericho_Drumm",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "Blade_(character)",
+     "target": "Luke_Cage"
+    },
+    {
+     "source": "Spider-Bitch_(Ashley_Barton)",
+     "target": "Spider-Girl"
+    }
+   ]
+  },
+  {
+   "key": "big_fish_small_pond",
+   "title": "Big Fish, Small Pond",
+   "headliners": [
+    "Human_Torch_(android)"
+   ],
+   "nodes": [
+    {
+     "id": "Frankenstein's_Monster_(Marvel_Comics)",
+     "name": "Frankenstein's Monster (Marvel Comics)",
+     "role": "context",
+     "deg": 11,
+     "clo": 0.4083,
+     "bet": 0.00354,
+     "clu": 0.309,
+     "indeg": 2,
+     "outdeg": 11
+    },
+    {
+     "id": "Toro_(character)",
+     "name": "Toro (character)",
+     "role": "context",
+     "deg": 7,
+     "clo": 0.3909,
+     "bet": 0.00338,
+     "clu": 0.286,
+     "indeg": 4,
+     "outdeg": 4
+    },
+    {
+     "id": "Human_Torch",
+     "name": "Human Torch",
+     "role": "context",
+     "deg": 18,
+     "clo": 0.436,
+     "bet": 0.01208,
+     "clu": 0.15,
+     "indeg": 17,
+     "outdeg": 5
+    },
+    {
+     "id": "Union_Jack_(Marvel_Comics)",
+     "name": "Union Jack (Marvel Comics)",
+     "role": "context",
+     "deg": 8,
+     "clo": 0.3503,
+     "bet": 0.00541,
+     "clu": 0.25,
+     "indeg": 8,
+     "outdeg": 5
+    },
+    {
+     "id": "Jack_Frost_(Marvel_Comics)",
+     "name": "Jack Frost (Marvel Comics)",
+     "role": "context",
+     "deg": 7,
+     "clo": 0.3437,
+     "bet": 0.00146,
+     "clu": 0.476,
+     "indeg": 1,
+     "outdeg": 7
+    },
+    {
+     "id": "Citizen_V",
+     "name": "Citizen V",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.3239,
+     "bet": 0.00051,
+     "clu": 0.333,
+     "indeg": 2,
+     "outdeg": 1
+    },
+    {
+     "id": "Black_Widow_(Natasha_Romanova)",
+     "name": "Black Widow (Natasha Romanova)",
+     "role": "context",
+     "deg": 25,
+     "clo": 0.46,
+     "bet": 0.03512,
+     "clu": 0.147,
+     "indeg": 22,
+     "outdeg": 7
+    },
+    {
+     "id": "Scarlet_Witch",
+     "name": "Scarlet Witch",
+     "role": "context",
+     "deg": 32,
+     "clo": 0.475,
+     "bet": 0.02434,
+     "clu": 0.177,
+     "indeg": 28,
+     "outdeg": 14
+    },
+    {
+     "id": "Union_Jack_(Joseph_Chapman)",
+     "name": "Union Jack (Joseph Chapman)",
+     "role": "context",
+     "deg": 7,
+     "clo": 0.3366,
+     "bet": 0.00377,
+     "clu": 0.333,
+     "indeg": 6,
+     "outdeg": 6
+    },
+    {
+     "id": "Bucky_(Marvel_Comics)",
+     "name": "Bucky (Marvel Comics)",
+     "role": "context",
+     "deg": 12,
+     "clo": 0.3589,
+     "bet": 0.0047,
+     "clu": 0.212,
+     "indeg": 9,
+     "outdeg": 9
+    },
+    {
+     "id": "Human_Torch_(android)",
+     "name": "Human Torch (android)",
+     "role": "headliner",
+     "deg": 17,
+     "clo": 0.3876,
+     "bet": 0.01235,
+     "clu": 0.147,
+     "indeg": 14,
+     "outdeg": 9
+    },
+    {
+     "id": "Doctor_Nemesis",
+     "name": "Doctor Nemesis",
+     "role": "context",
+     "deg": 15,
+     "clo": 0.434,
+     "bet": 0.01036,
+     "clu": 0.267,
+     "indeg": 7,
+     "outdeg": 9
+    },
+    {
+     "id": "Whizzer_(Robert_Frank)",
+     "name": "Whizzer (Robert Frank)",
+     "role": "context",
+     "deg": 8,
+     "clo": 0.371,
+     "bet": 0.00247,
+     "clu": 0.25,
+     "indeg": 6,
+     "outdeg": 6
+    },
+    {
+     "id": "U.S._Agent",
+     "name": "U.S. Agent",
+     "role": "context",
+     "deg": 21,
+     "clo": 0.451,
+     "bet": 0.02546,
+     "clu": 0.176,
+     "indeg": 6,
+     "outdeg": 20
+    },
+    {
+     "id": "Jeffrey_Mace",
+     "name": "Jeffrey Mace",
+     "role": "context",
+     "deg": 8,
+     "clo": 0.3278,
+     "bet": 0.00151,
+     "clu": 0.25,
+     "indeg": 7,
+     "outdeg": 1
+    },
+    {
+     "id": "Blue_Diamond_(character)",
+     "name": "Blue Diamond (character)",
+     "role": "context",
+     "deg": 9,
+     "clo": 0.337,
+     "bet": 0.00314,
+     "clu": 0.278,
+     "indeg": 1,
+     "outdeg": 9
+    },
+    {
+     "id": "Spitfire_(character)",
+     "name": "Spitfire (character)",
+     "role": "context",
+     "deg": 6,
+     "clo": 0.3387,
+     "bet": 0.00132,
+     "clu": 0.267,
+     "indeg": 5,
+     "outdeg": 5
+    },
+    {
+     "id": "Scarlet_Scarab",
+     "name": "Scarlet Scarab",
+     "role": "context",
+     "deg": 2,
+     "clo": 0.3333,
+     "bet": 8e-05,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 2
+    }
+   ],
+   "edges": [
+    {
+     "source": "Toro_(character)",
+     "target": "Bucky_(Marvel_Comics)"
+    },
+    {
+     "source": "Toro_(character)",
+     "target": "Frankenstein's_Monster_(Marvel_Comics)"
+    },
+    {
+     "source": "Toro_(character)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Toro_(character)",
+     "target": "Whizzer_(Robert_Frank)"
+    },
+    {
+     "source": "Frankenstein's_Monster_(Marvel_Comics)",
+     "target": "Bucky_(Marvel_Comics)"
+    },
+    {
+     "source": "Frankenstein's_Monster_(Marvel_Comics)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Human_Torch",
+     "target": "Blue_Diamond_(character)"
+    },
+    {
+     "source": "Human_Torch",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Union_Jack_(Marvel_Comics)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Union_Jack_(Marvel_Comics)",
+     "target": "Spitfire_(character)"
+    },
+    {
+     "source": "Union_Jack_(Marvel_Comics)",
+     "target": "Union_Jack_(Joseph_Chapman)"
+    },
+    {
+     "source": "Jack_Frost_(Marvel_Comics)",
+     "target": "Blue_Diamond_(character)"
+    },
+    {
+     "source": "Jack_Frost_(Marvel_Comics)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Jack_Frost_(Marvel_Comics)",
+     "target": "Jeffrey_Mace"
+    },
+    {
+     "source": "Jack_Frost_(Marvel_Comics)",
+     "target": "Scarlet_Witch"
+    },
+    {
+     "source": "Jack_Frost_(Marvel_Comics)",
+     "target": "Whizzer_(Robert_Frank)"
+    },
+    {
+     "source": "Citizen_V",
+     "target": "Blue_Diamond_(character)"
+    },
+    {
+     "source": "Citizen_V",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Black_Widow_(Natasha_Romanova)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Scarlet_Witch",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Scarlet_Witch",
+     "target": "Whizzer_(Robert_Frank)"
+    },
+    {
+     "source": "Scarlet_Witch",
+     "target": "U.S._Agent"
+    },
+    {
+     "source": "Union_Jack_(Joseph_Chapman)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Union_Jack_(Joseph_Chapman)",
+     "target": "Spitfire_(character)"
+    },
+    {
+     "source": "Union_Jack_(Joseph_Chapman)",
+     "target": "U.S._Agent"
+    },
+    {
+     "source": "Bucky_(Marvel_Comics)",
+     "target": "Jeffrey_Mace"
+    },
+    {
+     "source": "Bucky_(Marvel_Comics)",
+     "target": "U.S._Agent"
+    },
+    {
+     "source": "Bucky_(Marvel_Comics)",
+     "target": "Human_Torch_(android)"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "Blue_Diamond_(character)"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "Doctor_Nemesis"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "Spitfire_(character)"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "Whizzer_(Robert_Frank)"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "Jeffrey_Mace"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "Scarlet_Scarab"
+    },
+    {
+     "source": "Human_Torch_(android)",
+     "target": "U.S._Agent"
+    },
+    {
+     "source": "Whizzer_(Robert_Frank)",
+     "target": "Blue_Diamond_(character)"
+    },
+    {
+     "source": "Jeffrey_Mace",
+     "target": "Blue_Diamond_(character)"
+    }
+   ]
+  },
+  {
+   "key": "best_of_both_worlds",
+   "title": "Best of Both Worlds",
+   "headliners": [
+    "Nightmask"
+   ],
+   "nodes": [
+    {
+     "id": "Captain_Universe",
+     "name": "Captain Universe",
+     "role": "context",
+     "deg": 17,
+     "clo": 0.4437,
+     "bet": 0.01533,
+     "clu": 0.243,
+     "indeg": 6,
+     "outdeg": 14
+    },
+    {
+     "id": "Justice_(New_Universe)",
+     "name": "Justice (New Universe)",
+     "role": "context",
+     "deg": 6,
+     "clo": 0.3266,
+     "bet": 0.00177,
+     "clu": 0.267,
+     "indeg": 2,
+     "outdeg": 5
+    },
+    {
+     "id": "Star_Brand",
+     "name": "Star Brand",
+     "role": "context",
+     "deg": 16,
+     "clo": 0.4029,
+     "bet": 0.01478,
+     "clu": 0.183,
+     "indeg": 8,
+     "outdeg": 11
+    },
+    {
+     "id": "Starr_the_Slayer",
+     "name": "Starr the Slayer",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.2905,
+     "bet": 0.0,
+     "clu": 1.0,
+     "indeg": 2,
+     "outdeg": 3
+    },
+    {
+     "id": "Mark_Hazzard:_Merc",
+     "name": "Mark Hazzard: Merc",
+     "role": "context",
+     "deg": 1,
+     "clo": 0.244,
+     "bet": 0.0,
+     "clu": 0,
+     "indeg": 0,
+     "outdeg": 1
+    },
+    {
+     "id": "Nightmask",
+     "name": "Nightmask",
+     "role": "headliner",
+     "deg": 5,
+     "clo": 0.3224,
+     "bet": 0.00766,
+     "clu": 0.4,
+     "indeg": 5,
+     "outdeg": 3
+    }
+   ],
+   "edges": [
+    {
+     "source": "Captain_Universe",
+     "target": "Nightmask"
+    },
+    {
+     "source": "Captain_Universe",
+     "target": "Star_Brand"
+    },
+    {
+     "source": "Justice_(New_Universe)",
+     "target": "Nightmask"
+    },
+    {
+     "source": "Justice_(New_Universe)",
+     "target": "Star_Brand"
+    },
+    {
+     "source": "Justice_(New_Universe)",
+     "target": "Starr_the_Slayer"
+    },
+    {
+     "source": "Star_Brand",
+     "target": "Nightmask"
+    },
+    {
+     "source": "Star_Brand",
+     "target": "Starr_the_Slayer"
+    },
+    {
+     "source": "Starr_the_Slayer",
+     "target": "Nightmask"
+    },
+    {
+     "source": "Mark_Hazzard:_Merc",
+     "target": "Nightmask"
+    }
+   ]
+  },
+  {
+   "key": "name_dropper",
+   "title": "Name-Dropper",
+   "headliners": [
+    "Solo_(Marvel_Comics)"
+   ],
+   "nodes": [
+    {
+     "id": "Deathlok",
+     "name": "Deathlok",
+     "role": "context",
+     "deg": 20,
+     "clo": 0.436,
+     "bet": 0.02133,
+     "clu": 0.121,
+     "indeg": 17,
+     "outdeg": 5
+    },
+    {
+     "id": "Gauntlet_(Joseph_Green)",
+     "name": "Gauntlet (Joseph Green)",
+     "role": "context",
+     "deg": 6,
+     "clo": 0.3807,
+     "bet": 0.00075,
+     "clu": 0.4,
+     "indeg": 3,
+     "outdeg": 3
+    },
+    {
+     "id": "Typeface_(character)",
+     "name": "Typeface (character)",
+     "role": "context",
+     "deg": 4,
+     "clo": 0.3926,
+     "bet": 0.00015,
+     "clu": 0.5,
+     "indeg": 1,
+     "outdeg": 3
+    },
+    {
+     "id": "Wolverine_(character)",
+     "name": "Wolverine (character)",
+     "role": "context",
+     "deg": 63,
+     "clo": 0.5237,
+     "bet": 0.09247,
+     "clu": 0.118,
+     "indeg": 60,
+     "outdeg": 17
+    },
+    {
+     "id": "Nova_(Richard_Rider)",
+     "name": "Nova (Richard Rider)",
+     "role": "context",
+     "deg": 21,
+     "clo": 0.4333,
+     "bet": 0.01914,
+     "clu": 0.129,
+     "indeg": 16,
+     "outdeg": 11
+    },
+    {
+     "id": "Paladin_(comics)",
+     "name": "Paladin (comics)",
+     "role": "context",
+     "deg": 13,
+     "clo": 0.4157,
+     "bet": 0.00163,
+     "clu": 0.308,
+     "indeg": 5,
+     "outdeg": 10
+    },
+    {
+     "id": "Hulk",
+     "name": "Hulk",
+     "role": "context",
+     "deg": 65,
+     "clo": 0.5257,
+     "bet": 0.10505,
+     "clu": 0.077,
+     "indeg": 64,
+     "outdeg": 10
+    },
+    {
+     "id": "Ghost_Rider_(Danny_Ketch)",
+     "name": "Ghost Rider (Danny Ketch)",
+     "role": "context",
+     "deg": 10,
+     "clo": 0.422,
+     "bet": 0.00229,
+     "clu": 0.422,
+     "indeg": 7,
+     "outdeg": 7
+    },
+    {
+     "id": "Deadpool",
+     "name": "Deadpool",
+     "role": "context",
+     "deg": 41,
+     "clo": 0.4937,
+     "bet": 0.05599,
+     "clu": 0.137,
+     "indeg": 33,
+     "outdeg": 19
+    },
+    {
+     "id": "War_Machine",
+     "name": "War Machine",
+     "role": "context",
+     "deg": 16,
+     "clo": 0.396,
+     "bet": 0.01356,
+     "clu": 0.075,
+     "indeg": 12,
+     "outdeg": 4
+    },
+    {
+     "id": "G._W._Bridge",
+     "name": "G. W. Bridge",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.3147,
+     "bet": 3e-05,
+     "clu": 0.667,
+     "indeg": 1,
+     "outdeg": 2
+    },
+    {
+     "id": "Cable_(character)",
+     "name": "Cable (character)",
+     "role": "context",
+     "deg": 24,
+     "clo": 0.4326,
+     "bet": 0.02191,
+     "clu": 0.221,
+     "indeg": 21,
+     "outdeg": 11
+    },
+    {
+     "id": "Solo_(Marvel_Comics)",
+     "name": "Solo (Marvel Comics)",
+     "role": "headliner",
+     "deg": 13,
+     "clo": 0.4182,
+     "bet": 0.00845,
+     "clu": 0.167,
+     "indeg": 1,
+     "outdeg": 12
+    },
+    {
+     "id": "Battlestar_(character)",
+     "name": "Battlestar (character)",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.3305,
+     "bet": 0.00011,
+     "clu": 0.333,
+     "indeg": 3,
+     "outdeg": 2
+    }
+   ],
+   "edges": [
+    {
+     "source": "Deathlok",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Deathlok",
+     "target": "War_Machine"
+    },
+    {
+     "source": "Gauntlet_(Joseph_Green)",
+     "target": "Hulk"
+    },
+    {
+     "source": "Gauntlet_(Joseph_Green)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Cable_(character)"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Deadpool"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Ghost_Rider_(Danny_Ketch)"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Hulk"
+    },
+    {
+     "source": "Wolverine_(character)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Typeface_(character)",
+     "target": "Deadpool"
+    },
+    {
+     "source": "Typeface_(character)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Nova_(Richard_Rider)",
+     "target": "Cable_(character)"
+    },
+    {
+     "source": "Nova_(Richard_Rider)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Paladin_(comics)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Hulk",
+     "target": "Deadpool"
+    },
+    {
+     "source": "Hulk",
+     "target": "Ghost_Rider_(Danny_Ketch)"
+    },
+    {
+     "source": "Hulk",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Ghost_Rider_(Danny_Ketch)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Cable_(character)"
+    },
+    {
+     "source": "Deadpool",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "War_Machine",
+     "target": "Cable_(character)"
+    },
+    {
+     "source": "War_Machine",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "G._W._Bridge",
+     "target": "Cable_(character)"
+    },
+    {
+     "source": "G._W._Bridge",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Cable_(character)",
+     "target": "Solo_(Marvel_Comics)"
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Battlestar_(character)"
+    }
+   ]
+  },
+  {
+   "key": "loneliest_portal",
+   "title": "The Loneliest Portal",
+   "headliners": [
+    "Radian_(Morituri)"
+   ],
+   "nodes": [
+    {
+     "id": "Blackthorn_(character)",
+     "name": "Blackthorn (character)",
+     "role": "group_a",
+     "deg": 2,
+     "clo": null,
+     "bet": 0.0,
+     "clu": 1.0,
+     "indeg": 2,
+     "outdeg": 1
+    },
+    {
+     "id": "Shear_(character)",
+     "name": "Shear (character)",
+     "role": "group_a",
+     "deg": 2,
+     "clo": null,
+     "bet": 0.083,
+     "clu": 0,
+     "indeg": 1,
+     "outdeg": 2
+    },
+    {
+     "id": "Backhand_(character)",
+     "name": "Backhand (character)",
+     "role": "group_a",
+     "deg": 2,
+     "clo": null,
+     "bet": 0.018,
+     "clu": 0,
+     "indeg": 2,
+     "outdeg": 1
+    },
+    {
+     "id": "Snapdragon_(Morituri)",
+     "name": "Snapdragon (Morituri)",
+     "role": "group_a",
+     "deg": 3,
+     "clo": null,
+     "bet": 0.03,
+     "clu": 0.667,
+     "indeg": 2,
+     "outdeg": 3
+    },
+    {
+     "id": "Scatterbrain_(Morituri)",
+     "name": "Scatterbrain (Morituri)",
+     "role": "group_b",
+     "deg": 2,
+     "clo": null,
+     "bet": 0.0,
+     "clu": 1.0,
+     "indeg": 2,
+     "outdeg": 2
+    },
+    {
+     "id": "Toxyn",
+     "name": "Toxyn",
+     "role": "group_b",
+     "deg": 3,
+     "clo": null,
+     "bet": 0.107,
+     "clu": 0.667,
+     "indeg": 3,
+     "outdeg": 2
+    },
+    {
+     "id": "Scaredycat",
+     "name": "Scaredycat",
+     "role": "group_b",
+     "deg": 3,
+     "clo": null,
+     "bet": 0.107,
+     "clu": 0.667,
+     "indeg": 3,
+     "outdeg": 3
+    },
+    {
+     "id": "Radian_(Morituri)",
+     "name": "Radian (Morituri)",
+     "role": "headliner",
+     "deg": 6,
+     "clo": null,
+     "bet": 0.667,
+     "clu": 0.2,
+     "indeg": 4,
+     "outdeg": 6
+    },
+    {
+     "id": "Vyking",
+     "name": "Vyking",
+     "role": "group_a",
+     "deg": 3,
+     "clo": null,
+     "bet": 0.131,
+     "clu": 0.333,
+     "indeg": 3,
+     "outdeg": 2
+    }
+   ],
+   "edges": [
+    {
+     "source": "Blackthorn_(character)",
+     "target": "Radian_(Morituri)"
+    },
+    {
+     "source": "Blackthorn_(character)",
+     "target": "Snapdragon_(Morituri)"
+    },
+    {
+     "source": "Shear_(character)",
+     "target": "Radian_(Morituri)"
+    },
+    {
+     "source": "Shear_(character)",
+     "target": "Backhand_(character)"
+    },
+    {
+     "source": "Backhand_(character)",
+     "target": "Vyking"
+    },
+    {
+     "source": "Snapdragon_(Morituri)",
+     "target": "Radian_(Morituri)"
+    },
+    {
+     "source": "Snapdragon_(Morituri)",
+     "target": "Vyking"
+    },
+    {
+     "source": "Scatterbrain_(Morituri)",
+     "target": "Scaredycat"
+    },
+    {
+     "source": "Scatterbrain_(Morituri)",
+     "target": "Toxyn"
+    },
+    {
+     "source": "Toxyn",
+     "target": "Radian_(Morituri)"
+    },
+    {
+     "source": "Toxyn",
+     "target": "Scaredycat"
+    },
+    {
+     "source": "Scaredycat",
+     "target": "Radian_(Morituri)"
+    },
+    {
+     "source": "Radian_(Morituri)",
+     "target": "Vyking"
+    }
+   ]
+  }
+ ]
+}

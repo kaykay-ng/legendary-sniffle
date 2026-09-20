@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Centrality Awards</title>
+    <meta name="description" content="Six categories where the Marvel character network's centrality measures genuinely disagree with each other — degree vs. closeness, clustering vs. betweenness, in-links vs. out-links — each with real characters, real numbers, and a small network you can inspect.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <nav class="nav">
+                <a href="index.html">Hub</a>
+                <a href="week1.html">Week 1 · Explorer &amp; Distributions</a>
+                <a href="week2.html">Week 2 · Model Comparison</a>
+                <a href="week3.html">Week 3 · Popularity vs. Load-Bearing</a>
+            </nav>
+            <nav class="nav-banner">
+                On this page:
+                <a href="#one-good-friend">One Good Friend</a> ·
+                <a href="#popular-but-replaceable">Popular But Replaceable</a> ·
+                <a href="#big-fish-small-pond">Big Fish, Small Pond</a> ·
+                <a href="#best-of-both-worlds">Best of Both Worlds</a> ·
+                <a href="#name-dropper">Name-Dropper</a> ·
+                <a href="#loneliest-portal">The Loneliest Portal</a> ·
+                <a href="#meet-the-network">Meet the network</a>
+            </nav>
+            <div class="hero-eyebrow">02805 · Social Graphs and Interactions · Bonus, after Week 3</div>
+            <h1>The Centrality Awards</h1>
+            <p class="lede">
+                Week 3 found one outlier &mdash; Rockman_(character), degree 2, structurally
+                irreplaceable. Going back through degree, closeness, betweenness, clustering, and
+                the raw in/out-link counts of the directed graph turns up six more characters where
+                two centrality measures flatly disagree about who matters, each verified against the
+                actual giant component (277 nodes) or, in one case, a nine-character island that
+                isn't even connected to it.
+            </p>
+            <div class="stat-row" id="heroStats">
+                <div class="stat-tile"><div class="value">6</div><div class="label">award categories, each a real measure-vs-measure contradiction</div></div>
+                <div class="stat-tile"><div class="value">12&rarr;1</div><div class="label">characters Solo_(Marvel_Comics) cites vs. cite him back</div></div>
+                <div class="stat-tile"><div class="value">0.58</div><div class="label">Satana's clustering &mdash; near the component's highest, with near-zero betweenness</div></div>
+                <div class="stat-tile"><div class="value">2</div><div class="label">pieces a 9-character island splits into once its one cut vertex is removed</div></div>
+            </div>
+        </header>
+
+        <main>
+            <section id="one-good-friend" class="section">
+                <h2>The Awards</h2>
+                <p class="section-intro">
+                    Six categories, each built from the giant component computed in Week 3
+                    (undirected, 277 nodes) unless noted otherwise.
+                </p>
+
+                <div class="card award-card">
+                    <div class="award-eyebrow">🥇 Award 1 of 6 &middot; Best Return on a Single Connection</div>
+                    <h3>One Good Friend</h3>
+                    <p class="award-tagline">It's not what you know, it's who you know &mdash; literally.</p>
+                    <p class="award-blurb">
+                        <strong>Enigma_(Marvel_Comics)</strong>, <strong>Ethan_Edwards</strong>,
+                        <strong>Helix_(Marvel_Comics)</strong>, <strong>NFL_SuperPro</strong>, and
+                        <strong>Thunderclap_(comics)</strong> each have exactly one edge in the whole
+                        giant component &mdash; and every one of them spent it on the same node:
+                        Spider-Man. That single connection is enough to pull their closeness
+                        centrality to <strong>0.3735</strong>, barely below the network's <em>median</em>
+                        of 0.3812 &mdash; ahead of dozens of characters with four, five, even six times
+                        as many connections. <strong>Scorpio_(Marvel_Comics)</strong> does one better:
+                        two edges, to Spider-Man and Wolverine, and a closeness of 0.3904 &mdash;
+                        <em>above</em> the median outright.
+                    </p>
+                    <div class="callout">
+                        Closeness centrality measures average distance to everyone else in the
+                        network &mdash; it has no idea whether your one connection is a nobody or the
+                        single most-linked character in the entire component. Spend your one edge
+                        wisely.
+                    </div>
+                </div>
+            </section>
+
+            <section id="popular-but-replaceable" class="section">
+                <div class="card award-card">
+                    <div class="award-eyebrow">🏅 Award 2 of 6 &middot; Most Overrated by Degree</div>
+                    <h3>Popular But Replaceable</h3>
+                    <p class="award-tagline">Lots of friends, zero of them need you specifically.</p>
+                    <p class="award-blurb">
+                        <strong>Satana_(Marvel_Comics)</strong>: degree 10, clustering
+                        <strong>0.578</strong> &mdash; nearly the highest of any double-digit-degree
+                        node in the component &mdash; and betweenness centrality that ranks
+                        <strong>104th of 277</strong>, below the median. Her ten connections
+                        (Blade, Doctor Strange, Ghost Rider twice over, Man-Thing, Deadpool) mostly
+                        already know each other; there's almost always another route around her.
+                        <strong>Spider-Woman</strong> tells the same story at higher degree: 17
+                        connections, most of them into a tight self-referential "spider family"
+                        cluster (Spider-Girl, Silk, both other Spider-Womans, Anya Corazon), yet her
+                        betweenness ranks only <strong>178th of 277</strong>.
+                    </p>
+                    <div class="callout">
+                        High clustering is exactly what makes a node replaceable: if your neighbors
+                        already know each other, removing you barely changes anyone's shortest path.
+                        Popularity and load-bearing pull in opposite directions here, not the same
+                        one.
+                    </div>
+                </div>
+            </section>
+
+            <section id="big-fish-small-pond" class="section">
+                <div class="card award-card">
+                    <div class="award-eyebrow">🐟 Award 3 of 6 &middot; Most Locally Important, Globally Overlooked</div>
+                    <h3>Big Fish, Small Pond</h3>
+                    <p class="award-tagline">Popular in your friend group. A stranger to everyone else.</p>
+                    <p class="award-blurb">
+                        <strong>Human_Torch_(android)</strong> has degree 17 &mdash; a genuinely
+                        well-connected character, top-50 in the component &mdash; and he holds
+                        together a real cluster: Bucky, both Union Jacks, Jeffrey Mace, Spitfire,
+                        Toro, Whizzer, Scarlet Scarab, Blue Diamond, Citizen V, Doctor Nemesis, a
+                        pocket of Golden Age Invaders-adjacent characters. But his closeness
+                        centrality is <strong>0.3876</strong>, ranking <strong>148th of 277</strong>
+                        &mdash; below the network median &mdash; because that whole pocket sits far
+                        from the modern core (Spider-Man, Wolverine, Hulk). He's the biggest fish in
+                        his pond; the pond itself is just off to the side of the lake.
+                    </p>
+                    <div class="callout">
+                        Degree only tells you about your immediate neighborhood. Closeness tells you
+                        about your position in the <em>whole</em> network &mdash; and a character can
+                        score well on one and badly on the other simply by which neighborhood they
+                        belong to.
+                    </div>
+                </div>
+            </section>
+
+            <section id="best-of-both-worlds" class="section">
+                <div class="card award-card">
+                    <div class="award-eyebrow">🎭 Award 4 of 6 &middot; Rarest Combo: Clique Member <em>and</em> Bridge</div>
+                    <h3>Best of Both Worlds</h3>
+                    <p class="award-tagline">High clustering and high betweenness aren't supposed to travel together.</p>
+                    <p class="award-blurb">
+                        <strong>Nightmask</strong>: degree just 5, clustering <strong>0.400</strong>
+                        (77th percentile) <em>and</em> betweenness <strong>0.00766</strong> (81st
+                        percentile &mdash; numerically higher than Rockman's 0.00725). His five
+                        neighbors are mostly a small "New Universe" cosmic-power clique (Star_Brand,
+                        Justice, Captain_Universe) that mutually reference each other &mdash; the
+                        source of his high clustering &mdash; but he's also the only route in for
+                        Mark_Hazzard:_Merc, a degree-1 dead end. Usually a node with this much
+                        clustering has redundant routes everywhere and low betweenness (see Award 2);
+                        Nightmask keeps both.
+                    </p>
+                    <div class="table-grid">
+                        <table class="leaderboard">
+                            <caption>Same trick, more connections (runners-up)</caption>
+                            <thead><tr><th>character</th><th>degree</th><th>clustering</th><th>betweenness</th></tr></thead>
+                            <tbody>
+                                <tr><td>Werewolf_by_Night</td><td class="num">15</td><td class="num">0.371</td><td class="num">0.00867</td></tr>
+                                <tr><td>Noh-Varr</td><td class="num">18</td><td class="num">0.314</td><td class="num">0.00887</td></tr>
+                                <tr><td>Hellion_(character)</td><td class="num">12</td><td class="num">0.303</td><td class="num">0.00933</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout">
+                        The runners-up pull off the same combination with more connections to work
+                        with, which makes it less surprising. Nightmask does it with degree 5 &mdash;
+                        the rarer and more interesting version.
+                    </div>
+                </div>
+            </section>
+
+            <section id="name-dropper" class="section">
+                <div class="card award-card">
+                    <div class="award-eyebrow">📇 Award 5 of 6 &middot; Least Reciprocated Citations</div>
+                    <h3>Name-Dropper</h3>
+                    <p class="award-tagline">The directed graph remembers who namechecked whom.</p>
+                    <p class="award-blurb">
+                        <strong>Solo_(Marvel_Comics)</strong>'s article links out to twelve other
+                        characters &mdash; Cable, Deadpool, Hulk, Wolverine, War Machine,
+                        Nova_(Richard_Rider), Ghost_Rider_(Danny_Ketch), Paladin, Deathlok,
+                        Battlestar, G.W._Bridge, Gauntlet_(Joseph_Green), Typeface &mdash; and exactly
+                        <strong>one</strong> of them links back. Degree (undirected) says 13
+                        connections, respectable; the directed graph says 12 out, 1 in. Runners-up:
+                        <strong>Brian_Braddock</strong> (1 in, 11 out) and
+                        <strong>Spider-Bitch_(Ashley_Barton)</strong> (2 in, 15 out).
+                    </p>
+                    <div class="callout orange">
+                        Every centrality measure so far has treated the graph as undirected, which
+                        quietly assumes a link is a two-way acknowledgment. It usually isn't &mdash;
+                        Week 3's Ajak/Thena pair already showed some links go one way and stay that
+                        way. Solo is just the most one-sided version of it.
+                    </div>
+                </div>
+            </section>
+
+            <section id="loneliest-portal" class="section">
+                <div class="card award-card">
+                    <div class="award-eyebrow">🚪 Award 6 of 6 &middot; Best Supporting Cut Vertex, Isolated Division</div>
+                    <h3>The Loneliest Portal</h3>
+                    <p class="award-tagline">A whole miniature Rockman story, cut off from the rest of the universe.</p>
+                    <p class="award-blurb">
+                        Nine characters &mdash; all from Marvel's <em>Strikeforce: Morituri</em>
+                        &mdash; form their own connected component, completely disconnected from the
+                        277-node giant component. Inside that island, <strong>Radian_(Morituri)</strong>
+                        is the only cut vertex: degree 6 of a possible 8, betweenness <strong>0.667</strong>
+                        within the island. Remove him and it splits clean in two &mdash; Snapdragon,
+                        Blackthorn, Vyking, Backhand, and Shear on one side; Scaredycat, Toxyn, and
+                        Scatterbrain on the other. The island's average clustering (0.504) is far
+                        above the giant component's (0.320): both halves are near-complete triangles
+                        on their own, and Radian's own clustering is a low 0.200 &mdash; the same
+                        "hub, not a clique member" signature as Spider-Man or Hulk have in the main
+                        network, just at 1/30th the scale.
+                    </p>
+                    <p class="award-blurb">
+                        The real twist is in the Wikipedia text, not the link structure: Radian was
+                        "killed by Shear for supposedly turning traitor." Shear sits in the 5-node
+                        half of the split &mdash; meaning the edge that connects Radian to one side of
+                        his own bridge is a link to his own killer.
+                    </p>
+                    <div class="callout">
+                        Every structural property that made Rockman surprising &mdash; low personal
+                        clustering, a dead end depending entirely on him, a betweenness value his
+                        degree alone would never predict &mdash; shows up again here, inside a pocket
+                        of the network that never even reaches Rockman, or anyone else in the giant
+                        component, at all.
+                    </div>
+                </div>
+            </section>
+
+            <section id="meet-the-network" class="section">
+                <h2>Meet the Network</h2>
+                <p class="section-intro">
+                    Each award above pulled from a specific, small neighborhood: the winner(s), plus
+                    their real neighbors in the giant component (or, for the Loneliest Portal, the
+                    whole isolated island). Pick a category below &mdash; gold nodes are the award
+                    winner(s), everything else is the context that makes the win make sense. Node
+                    size is degree within the view shown; hover any node for its numbers.
+                </p>
+
+                <div class="card">
+                    <div class="controls">
+                        <select id="awardsPresetSelect">
+                            <option value="one_good_friend">One Good Friend</option>
+                            <option value="popular_but_replaceable">Popular But Replaceable</option>
+                            <option value="big_fish_small_pond">Big Fish, Small Pond</option>
+                            <option value="best_of_both_worlds">Best of Both Worlds</option>
+                            <option value="name_dropper">Name-Dropper</option>
+                            <option value="loneliest_portal">The Loneliest Portal</option>
+                        </select>
+                    </div>
+                    <div class="explorable-legend" id="awardsLegend"></div>
+                    <div id="awardsNote"></div>
+                </div>
+
+                <div class="card" style="margin-top: 16px; padding: 12px;">
+                    <div id="awardsCy"></div>
+                    <div id="awardsTooltip"></div>
+                </div>
+            </section>
+
+            <div class="section-nav">
+                <a href="week3.html">&larr; Week 3 &middot; Popularity vs. Load-Bearing</a>
+                <a class="next" href="index.html">Back to hub &rarr;</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Group Assignment · Network Analysis Project · Data: Wikipedia
+                <em>Category:Marvel Comics superheroes</em> ·
+                Full working notebook:
+                <a href="https://github.com/kaykay-ng/legendary-sniffle/blob/main/notebooks/analysis.ipynb">analysis.ipynb</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/awards_explorer.js"></script>
+</body>
+</html>
