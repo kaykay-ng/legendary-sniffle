@@ -48,10 +48,6 @@
         <main>
             <section id="one-good-friend" class="section">
                 <h2>The Awards</h2>
-                <p class="section-intro">
-                    Six categories, each built from the giant component computed in Week 3
-                    (undirected, 277 nodes) unless noted otherwise.
-                </p>
 
                 <div class="card award-card">
                     <div class="award-eyebrow">🥇 Award 1 of 6 &middot; Best Return on a Single Connection</div>
@@ -166,24 +162,40 @@
 
             <section id="name-dropper" class="section">
                 <div class="card award-card">
-                    <div class="award-eyebrow">📇 Award 5 of 6 &middot; Least Reciprocated Citations</div>
+                    <div class="award-eyebrow">📇 Award 5 of 6 &middot; Least Reciprocated Citations (tie)</div>
                     <h3>Name-Dropper</h3>
                     <p class="award-tagline">The directed graph remembers who namechecked whom.</p>
                     <p class="award-blurb">
-                        <strong>Solo_(Marvel_Comics)</strong>'s article links out to twelve other
-                        characters &mdash; Cable, Deadpool, Hulk, Wolverine, War Machine,
-                        Nova_(Richard_Rider), Ghost_Rider_(Danny_Ketch), Paladin, Deathlok,
-                        Battlestar, G.W._Bridge, Gauntlet_(Joseph_Green), Typeface &mdash; and exactly
-                        <strong>one</strong> of them links back. Degree (undirected) says 13
-                        connections, respectable; the directed graph says 12 out, 1 in. Runners-up:
-                        <strong>Brian_Braddock</strong> (1 in, 11 out) and
-                        <strong>Spider-Bitch_(Ashley_Barton)</strong> (2 in, 15 out).
+                        A tie: <strong>Solo_(Marvel_Comics)</strong> and
+                        <strong>Brian_Braddock</strong> both sit at in-degree <strong>1</strong>
+                        despite citing a dozen other characters apiece. Solo's article links out to
+                        twelve names &mdash; Cable, Deadpool, Hulk, Wolverine, War Machine,
+                        Nova_(Richard_Rider), Ghost_Rider_(Danny_Ketch), Deathlok, Battlestar,
+                        G.W._Bridge, Gauntlet_(Joseph_Green), Typeface &mdash; and the only one that
+                        links back is Paladin_(comics). Brian_Braddock links out to eleven, and the
+                        only inbound link is from his own twin sister, Betsy_Braddock.
+                    </p>
+                    <p class="award-blurb">
+                        Reading the actual Wikipedia pages splits this tie into two different stories.
+                        <strong>Brian_Braddock</strong>'s article is not obscure at all &mdash; it's the
+                        full <em>Captain Britain</em> character page: 45+ years of publication history,
+                        an origin from Merlyn and Roma, a whole multiversal "Captain Britain Corps"
+                        named after him. He's central to Marvel's British corner of the universe; he
+                        just isn't central to <em>this specific 303-page crawl</em>, because the other
+                        characters whose pages would plausibly cite him (other Captain Britain Corps
+                        members, Excalibur teammates) aren't in this dataset at all. <strong>Solo</strong>
+                        is the opposite case: a genuinely mid-tier character &mdash; Six Pack, Force
+                        Works, Mercs for Money &mdash; whose article itself is flagged as needing
+                        expansion. He's mentioned in passing across several bigger characters'
+                        continuity, but almost none of them consider him notable enough to link back.
                     </p>
                     <div class="callout orange">
                         Every centrality measure so far has treated the graph as undirected, which
                         quietly assumes a link is a two-way acknowledgment. It usually isn't &mdash;
                         Week 3's Ajak/Thena pair already showed some links go one way and stay that
-                        way. Solo is just the most one-sided version of it.
+                        way. But "low in-degree" doesn't mean one thing: Solo is genuinely peripheral,
+                        while Brian_Braddock is a citation-graph artifact &mdash; a real gap between
+                        what this network measures and what actually matters in the fiction.
                     </div>
                 </div>
             </section>
@@ -224,14 +236,6 @@
 
             <section id="meet-the-network" class="section">
                 <h2>Meet the Network</h2>
-                <p class="section-intro">
-                    Each award above pulled from a specific, small neighborhood: the winner(s), plus
-                    their real neighbors in the giant component (or, for the Loneliest Portal, the
-                    whole isolated island). Pick a category below &mdash; gold nodes are the award
-                    winner(s), everything else is the context that makes the win make sense. Node
-                    size is degree within the view shown; hover any node for its numbers.
-                </p>
-
                 <div class="card">
                     <div class="controls">
                         <select id="awardsPresetSelect">
