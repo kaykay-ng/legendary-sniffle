@@ -1415,28 +1415,6 @@
    ],
    "nodes": [
     {
-     "id": "G._W._Bridge",
-     "name": "G. W. Bridge",
-     "role": "context",
-     "deg": 3,
-     "clo": 0.3147,
-     "bet": 3e-05,
-     "clu": 0.667,
-     "indeg": 1,
-     "outdeg": 2
-    },
-    {
-     "id": "Gauntlet_(Joseph_Green)",
-     "name": "Gauntlet (Joseph Green)",
-     "role": "context",
-     "deg": 6,
-     "clo": 0.3807,
-     "bet": 0.00075,
-     "clu": 0.4,
-     "indeg": 3,
-     "outdeg": 3
-    },
-    {
      "id": "Arabian_Knight_(character)",
      "name": "Arabian Knight (character)",
      "role": "context",
@@ -1448,125 +1426,15 @@
      "outdeg": 8
     },
     {
-     "id": "Cable_(character)",
-     "name": "Cable (character)",
+     "id": "Nova_(Richard_Rider)",
+     "name": "Nova (Richard Rider)",
      "role": "context",
-     "deg": 24,
-     "clo": 0.4326,
-     "bet": 0.02191,
-     "clu": 0.221,
-     "indeg": 21,
+     "deg": 21,
+     "clo": 0.4333,
+     "bet": 0.01914,
+     "clu": 0.129,
+     "indeg": 16,
      "outdeg": 11
-    },
-    {
-     "id": "Wolverine_(character)",
-     "name": "Wolverine (character)",
-     "role": "context",
-     "deg": 63,
-     "clo": 0.5237,
-     "bet": 0.09247,
-     "clu": 0.118,
-     "indeg": 60,
-     "outdeg": 17
-    },
-    {
-     "id": "Typeface_(character)",
-     "name": "Typeface (character)",
-     "role": "context",
-     "deg": 4,
-     "clo": 0.3926,
-     "bet": 0.00015,
-     "clu": 0.5,
-     "indeg": 1,
-     "outdeg": 3
-    },
-    {
-     "id": "Battlestar_(character)",
-     "name": "Battlestar (character)",
-     "role": "context",
-     "deg": 3,
-     "clo": 0.3305,
-     "bet": 0.00011,
-     "clu": 0.333,
-     "indeg": 3,
-     "outdeg": 2
-    },
-    {
-     "id": "Deathlok",
-     "name": "Deathlok",
-     "role": "context",
-     "deg": 20,
-     "clo": 0.436,
-     "bet": 0.02133,
-     "clu": 0.121,
-     "indeg": 17,
-     "outdeg": 5
-    },
-    {
-     "id": "War_Machine",
-     "name": "War Machine",
-     "role": "context",
-     "deg": 16,
-     "clo": 0.396,
-     "bet": 0.01356,
-     "clu": 0.075,
-     "indeg": 12,
-     "outdeg": 4
-    },
-    {
-     "id": "Elsa_Bloodstone",
-     "name": "Elsa Bloodstone",
-     "role": "context",
-     "deg": 15,
-     "clo": 0.4083,
-     "bet": 0.00405,
-     "clu": 0.152,
-     "indeg": 5,
-     "outdeg": 12
-    },
-    {
-     "id": "Brian_Braddock",
-     "name": "Brian Braddock",
-     "role": "headliner",
-     "deg": 11,
-     "clo": 0.4207,
-     "bet": 0.00677,
-     "clu": 0.2,
-     "indeg": 1,
-     "outdeg": 11
-    },
-    {
-     "id": "Betsy_Braddock",
-     "name": "Betsy Braddock",
-     "role": "context",
-     "deg": 28,
-     "clo": 0.4623,
-     "bet": 0.01185,
-     "clu": 0.296,
-     "indeg": 7,
-     "outdeg": 28
-    },
-    {
-     "id": "Killpower",
-     "name": "Killpower",
-     "role": "context",
-     "deg": 3,
-     "clo": 0.352,
-     "bet": 6e-05,
-     "clu": 0.667,
-     "indeg": 2,
-     "outdeg": 2
-    },
-    {
-     "id": "Spitfire_(character)",
-     "name": "Spitfire (character)",
-     "role": "context",
-     "deg": 6,
-     "clo": 0.3387,
-     "bet": 0.00132,
-     "clu": 0.267,
-     "indeg": 5,
-     "outdeg": 5
     },
     {
      "id": "Ghost_Rider_(Danny_Ketch)",
@@ -1580,15 +1448,59 @@
      "outdeg": 7
     },
     {
-     "id": "Paladin_(comics)",
-     "name": "Paladin (comics)",
+     "id": "Cable_(character)",
+     "name": "Cable (character)",
      "role": "context",
-     "deg": 13,
-     "clo": 0.4157,
-     "bet": 0.00163,
-     "clu": 0.308,
-     "indeg": 5,
-     "outdeg": 10
+     "deg": 24,
+     "clo": 0.4326,
+     "bet": 0.02191,
+     "clu": 0.221,
+     "indeg": 21,
+     "outdeg": 11
+    },
+    {
+     "id": "Typeface_(character)",
+     "name": "Typeface (character)",
+     "role": "context",
+     "deg": 4,
+     "clo": 0.3926,
+     "bet": 0.00015,
+     "clu": 0.5,
+     "indeg": 1,
+     "outdeg": 3
+    },
+    {
+     "id": "Deathlok",
+     "name": "Deathlok",
+     "role": "context",
+     "deg": 20,
+     "clo": 0.436,
+     "bet": 0.02133,
+     "clu": 0.121,
+     "indeg": 17,
+     "outdeg": 5
+    },
+    {
+     "id": "Betsy_Braddock",
+     "name": "Betsy Braddock",
+     "role": "context",
+     "deg": 28,
+     "clo": 0.4623,
+     "bet": 0.01185,
+     "clu": 0.296,
+     "indeg": 7,
+     "outdeg": 28
+    },
+    {
+     "id": "Brian_Braddock",
+     "name": "Brian Braddock",
+     "role": "headliner",
+     "deg": 11,
+     "clo": 0.4207,
+     "bet": 0.00677,
+     "clu": 0.2,
+     "indeg": 1,
+     "outdeg": 11
     },
     {
      "id": "Ms._Marvel",
@@ -1600,6 +1512,94 @@
      "clu": 0.164,
      "indeg": 11,
      "outdeg": 1
+    },
+    {
+     "id": "Gauntlet_(Joseph_Green)",
+     "name": "Gauntlet (Joseph Green)",
+     "role": "context",
+     "deg": 6,
+     "clo": 0.3807,
+     "bet": 0.00075,
+     "clu": 0.4,
+     "indeg": 3,
+     "outdeg": 3
+    },
+    {
+     "id": "War_Machine",
+     "name": "War Machine",
+     "role": "context",
+     "deg": 16,
+     "clo": 0.396,
+     "bet": 0.01356,
+     "clu": 0.075,
+     "indeg": 12,
+     "outdeg": 4
+    },
+    {
+     "id": "Deadpool",
+     "name": "Deadpool",
+     "role": "context",
+     "deg": 41,
+     "clo": 0.4937,
+     "bet": 0.05599,
+     "clu": 0.137,
+     "indeg": 33,
+     "outdeg": 19
+    },
+    {
+     "id": "Killpower",
+     "name": "Killpower",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.352,
+     "bet": 6e-05,
+     "clu": 0.667,
+     "indeg": 2,
+     "outdeg": 2
+    },
+    {
+     "id": "Spider-Man",
+     "name": "Spider-Man",
+     "role": "context",
+     "deg": 106,
+     "clo": 0.5948,
+     "bet": 0.23495,
+     "clu": 0.083,
+     "indeg": 106,
+     "outdeg": 9
+    },
+    {
+     "id": "Paladin_(comics)",
+     "name": "Paladin (comics)",
+     "role": "context",
+     "deg": 13,
+     "clo": 0.4157,
+     "bet": 0.00163,
+     "clu": 0.308,
+     "indeg": 5,
+     "outdeg": 10
+    },
+    {
+     "id": "Hulk",
+     "name": "Hulk",
+     "role": "context",
+     "deg": 65,
+     "clo": 0.5257,
+     "bet": 0.10505,
+     "clu": 0.077,
+     "indeg": 64,
+     "outdeg": 10
+    },
+    {
+     "id": "Spitfire_(character)",
+     "name": "Spitfire (character)",
+     "role": "context",
+     "deg": 6,
+     "clo": 0.3387,
+     "bet": 0.00132,
+     "clu": 0.267,
+     "indeg": 5,
+     "outdeg": 5
     },
     {
      "id": "Union_Jack_(Marvel_Comics)",
@@ -1624,26 +1624,15 @@
      "outdeg": 17
     },
     {
-     "id": "Deadpool",
-     "name": "Deadpool",
+     "id": "Wolverine_(character)",
+     "name": "Wolverine (character)",
      "role": "context",
-     "deg": 41,
-     "clo": 0.4937,
-     "bet": 0.05599,
-     "clu": 0.137,
-     "indeg": 33,
-     "outdeg": 19
-    },
-    {
-     "id": "Spider-Man",
-     "name": "Spider-Man",
-     "role": "context",
-     "deg": 106,
-     "clo": 0.5948,
-     "bet": 0.23495,
-     "clu": 0.083,
-     "indeg": 106,
-     "outdeg": 9
+     "deg": 63,
+     "clo": 0.5237,
+     "bet": 0.09247,
+     "clu": 0.118,
+     "indeg": 60,
+     "outdeg": 17
     },
     {
      "id": "Solo_(Marvel_Comics)",
@@ -1657,6 +1646,39 @@
      "outdeg": 12
     },
     {
+     "id": "Battlestar_(character)",
+     "name": "Battlestar (character)",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.3305,
+     "bet": 0.00011,
+     "clu": 0.333,
+     "indeg": 3,
+     "outdeg": 2
+    },
+    {
+     "id": "Elsa_Bloodstone",
+     "name": "Elsa Bloodstone",
+     "role": "context",
+     "deg": 15,
+     "clo": 0.4083,
+     "bet": 0.00405,
+     "clu": 0.152,
+     "indeg": 5,
+     "outdeg": 12
+    },
+    {
+     "id": "G._W._Bridge",
+     "name": "G. W. Bridge",
+     "role": "context",
+     "deg": 3,
+     "clo": 0.3147,
+     "bet": 3e-05,
+     "clu": 0.667,
+     "indeg": 1,
+     "outdeg": 2
+    },
+    {
      "id": "Rachel_Summers",
      "name": "Rachel Summers",
      "role": "context",
@@ -1666,300 +1688,346 @@
      "clu": 0.286,
      "indeg": 16,
      "outdeg": 19
-    },
-    {
-     "id": "Hulk",
-     "name": "Hulk",
-     "role": "context",
-     "deg": 65,
-     "clo": 0.5257,
-     "bet": 0.10505,
-     "clu": 0.077,
-     "indeg": 64,
-     "outdeg": 10
-    },
-    {
-     "id": "Nova_(Richard_Rider)",
-     "name": "Nova (Richard Rider)",
-     "role": "context",
-     "deg": 21,
-     "clo": 0.4333,
-     "bet": 0.01914,
-     "clu": 0.129,
-     "indeg": 16,
-     "outdeg": 11
     }
    ],
    "edges": [
     {
      "source": "Arabian_Knight_(character)",
-     "target": "Hulk"
+     "target": "Hulk",
+     "reciprocal": false
     },
     {
      "source": "Arabian_Knight_(character)",
-     "target": "Union_Jack_(Marvel_Comics)"
+     "target": "Union_Jack_(Marvel_Comics)",
+     "reciprocal": false
     },
     {
-     "source": "Arabian_Knight_(character)",
-     "target": "Brian_Braddock"
+     "source": "Nova_(Richard_Rider)",
+     "target": "Cable_(character)",
+     "reciprocal": false
     },
     {
-     "source": "G._W._Bridge",
-     "target": "Cable_(character)"
+     "source": "Nova_(Richard_Rider)",
+     "target": "Ms._Marvel",
+     "reciprocal": false
     },
     {
-     "source": "G._W._Bridge",
-     "target": "Solo_(Marvel_Comics)"
+     "source": "Nova_(Richard_Rider)",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Ghost_Rider_(Danny_Ketch)",
+     "target": "Hulk",
+     "reciprocal": false
+    },
+    {
+     "source": "Ghost_Rider_(Danny_Ketch)",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Ghost_Rider_(Danny_Ketch)",
+     "target": "Wolverine_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Cable_(character)",
+     "target": "Betsy_Braddock",
+     "reciprocal": true
+    },
+    {
+     "source": "Cable_(character)",
+     "target": "Deadpool",
+     "reciprocal": true
+    },
+    {
+     "source": "Cable_(character)",
+     "target": "Rachel_Summers",
+     "reciprocal": true
+    },
+    {
+     "source": "Cable_(character)",
+     "target": "Wolverine_(character)",
+     "reciprocal": true
+    },
+    {
+     "source": "Typeface_(character)",
+     "target": "Deadpool",
+     "reciprocal": false
+    },
+    {
+     "source": "Typeface_(character)",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Deathlok",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Brian_Braddock",
+     "reciprocal": true
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Deadpool",
+     "reciprocal": false
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Deathlok",
+     "reciprocal": false
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Emma_Frost",
+     "reciprocal": false
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Rachel_Summers",
+     "reciprocal": true
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Betsy_Braddock",
+     "target": "Wolverine_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Arabian_Knight_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Elsa_Bloodstone",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Emma_Frost",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Hulk",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Killpower",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Ms._Marvel",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Rachel_Summers",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Spitfire_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Brian_Braddock",
+     "target": "Union_Jack_(Marvel_Comics)",
+     "reciprocal": false
     },
     {
      "source": "Gauntlet_(Joseph_Green)",
-     "target": "Hulk"
-    },
-    {
-     "source": "Gauntlet_(Joseph_Green)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Betsy_Braddock"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Deadpool"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Rachel_Summers"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Wolverine_(character)"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Emma_Frost"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Nova_(Richard_Rider)"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Cable_(character)",
-     "target": "War_Machine"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Betsy_Braddock"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Deadpool"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Elsa_Bloodstone"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Emma_Frost"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Ghost_Rider_(Danny_Ketch)"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Hulk"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Rachel_Summers"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Wolverine_(character)",
-     "target": "Spider-Man"
-    },
-    {
-     "source": "Typeface_(character)",
-     "target": "Deadpool"
-    },
-    {
-     "source": "Typeface_(character)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Typeface_(character)",
-     "target": "Spider-Man"
-    },
-    {
-     "source": "Battlestar_(character)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Deathlok",
-     "target": "Betsy_Braddock"
-    },
-    {
-     "source": "Deathlok",
-     "target": "Spider-Man"
-    },
-    {
-     "source": "Deathlok",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Deathlok",
-     "target": "War_Machine"
+     "target": "Hulk",
+     "reciprocal": false
     },
     {
      "source": "War_Machine",
-     "target": "Solo_(Marvel_Comics)"
+     "target": "Cable_(character)",
+     "reciprocal": false
     },
     {
-     "source": "Elsa_Bloodstone",
-     "target": "Brian_Braddock"
+     "source": "War_Machine",
+     "target": "Deathlok",
+     "reciprocal": false
     },
     {
-     "source": "Elsa_Bloodstone",
-     "target": "Deadpool"
+     "source": "Deadpool",
+     "target": "Elsa_Bloodstone",
+     "reciprocal": true
     },
     {
-     "source": "Brian_Braddock",
-     "target": "Betsy_Braddock"
+     "source": "Deadpool",
+     "target": "Hulk",
+     "reciprocal": true
     },
     {
-     "source": "Brian_Braddock",
-     "target": "Emma_Frost"
+     "source": "Deadpool",
+     "target": "Spider-Man",
+     "reciprocal": false
     },
     {
-     "source": "Brian_Braddock",
-     "target": "Hulk"
-    },
-    {
-     "source": "Brian_Braddock",
-     "target": "Killpower"
-    },
-    {
-     "source": "Brian_Braddock",
-     "target": "Ms._Marvel"
-    },
-    {
-     "source": "Brian_Braddock",
-     "target": "Rachel_Summers"
-    },
-    {
-     "source": "Brian_Braddock",
-     "target": "Spider-Man"
-    },
-    {
-     "source": "Brian_Braddock",
-     "target": "Spitfire_(character)"
-    },
-    {
-     "source": "Brian_Braddock",
-     "target": "Union_Jack_(Marvel_Comics)"
-    },
-    {
-     "source": "Betsy_Braddock",
-     "target": "Deadpool"
-    },
-    {
-     "source": "Betsy_Braddock",
-     "target": "Emma_Frost"
-    },
-    {
-     "source": "Betsy_Braddock",
-     "target": "Rachel_Summers"
-    },
-    {
-     "source": "Betsy_Braddock",
-     "target": "Spider-Man"
+     "source": "Deadpool",
+     "target": "Wolverine_(character)",
+     "reciprocal": true
     },
     {
      "source": "Killpower",
-     "target": "Hulk"
+     "target": "Hulk",
+     "reciprocal": false
+    },
+    {
+     "source": "Spider-Man",
+     "target": "Hulk",
+     "reciprocal": true
+    },
+    {
+     "source": "Paladin_(comics)",
+     "target": "Solo_(Marvel_Comics)",
+     "reciprocal": false
+    },
+    {
+     "source": "Paladin_(comics)",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Hulk",
+     "target": "Wolverine_(character)",
+     "reciprocal": true
     },
     {
      "source": "Spitfire_(character)",
-     "target": "Union_Jack_(Marvel_Comics)"
-    },
-    {
-     "source": "Ghost_Rider_(Danny_Ketch)",
-     "target": "Hulk"
-    },
-    {
-     "source": "Ghost_Rider_(Danny_Ketch)",
-     "target": "Spider-Man"
-    },
-    {
-     "source": "Ghost_Rider_(Danny_Ketch)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Paladin_(comics)",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Paladin_(comics)",
-     "target": "Spider-Man"
-    },
-    {
-     "source": "Ms._Marvel",
-     "target": "Nova_(Richard_Rider)"
+     "target": "Union_Jack_(Marvel_Comics)",
+     "reciprocal": true
     },
     {
      "source": "Emma_Frost",
-     "target": "Rachel_Summers"
+     "target": "Cable_(character)",
+     "reciprocal": false
     },
     {
      "source": "Emma_Frost",
-     "target": "Spider-Man"
+     "target": "Rachel_Summers",
+     "reciprocal": true
     },
     {
-     "source": "Deadpool",
-     "target": "Hulk"
+     "source": "Emma_Frost",
+     "target": "Spider-Man",
+     "reciprocal": false
     },
     {
-     "source": "Deadpool",
-     "target": "Spider-Man"
+     "source": "Emma_Frost",
+     "target": "Wolverine_(character)",
+     "reciprocal": false
     },
     {
-     "source": "Deadpool",
-     "target": "Rachel_Summers"
-    },
-    {
-     "source": "Deadpool",
-     "target": "Solo_(Marvel_Comics)"
-    },
-    {
-     "source": "Spider-Man",
-     "target": "Hulk"
-    },
-    {
-     "source": "Spider-Man",
-     "target": "Nova_(Richard_Rider)"
-    },
-    {
-     "source": "Spider-Man",
-     "target": "Rachel_Summers"
+     "source": "Wolverine_(character)",
+     "target": "Spider-Man",
+     "reciprocal": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
-     "target": "Hulk"
+     "target": "Battlestar_(character)",
+     "reciprocal": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
-     "target": "Nova_(Richard_Rider)"
+     "target": "Cable_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Deadpool",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Deathlok",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "G._W._Bridge",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Gauntlet_(Joseph_Green)",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Ghost_Rider_(Danny_Ketch)",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Hulk",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Nova_(Richard_Rider)",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Typeface_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "War_Machine",
+     "reciprocal": false
+    },
+    {
+     "source": "Solo_(Marvel_Comics)",
+     "target": "Wolverine_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Elsa_Bloodstone",
+     "target": "Wolverine_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "G._W._Bridge",
+     "target": "Cable_(character)",
+     "reciprocal": false
+    },
+    {
+     "source": "Rachel_Summers",
+     "target": "Deadpool",
+     "reciprocal": false
+    },
+    {
+     "source": "Rachel_Summers",
+     "target": "Spider-Man",
+     "reciprocal": false
+    },
+    {
+     "source": "Rachel_Summers",
+     "target": "Wolverine_(character)",
+     "reciprocal": false
     }
-   ]
+   ],
+   "directed": true
   },
   {
    "key": "loneliest_portal",

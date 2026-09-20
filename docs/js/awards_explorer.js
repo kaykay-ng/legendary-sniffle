@@ -31,7 +31,7 @@
     popular_but_replaceable: 'Highlighted metric: clustering coefficient vs. betweenness rank.',
     big_fish_small_pond: 'Highlighted metric: closeness centrality vs. degree.',
     best_of_both_worlds: 'Highlighted metric: clustering coefficient and betweenness, both at once.',
-    name_dropper: 'Highlighted metric: in-links received vs. out-links given (directed graph).',
+    name_dropper: 'Directed graph: arrows point from citer to cited. A double-headed edge is a mutual citation; every single-headed edge is one-way.',
     loneliest_portal: 'This island has no path to the other 277 characters — it is its own separate component.',
   };
 
@@ -87,6 +87,25 @@
             'haystack-radius': 0.15,
             'opacity': 0.55,
           }
+        },
+        {
+          selector: 'edge.directed',
+          style: {
+            'width': 1.1,
+            'line-color': cssVar('--orange'),
+            'target-arrow-color': cssVar('--orange'),
+            'target-arrow-shape': 'triangle',
+            'arrow-scale': 0.7,
+            'curve-style': 'bezier',
+            'opacity': 0.6,
+          }
+        },
+        {
+          selector: 'edge.directed.reciprocal',
+          style: {
+            'source-arrow-color': cssVar('--orange'),
+            'source-arrow-shape': 'triangle',
+          }
         }
       ],
       wheelSensitivity: 0.25,
@@ -120,7 +139,10 @@
       cy.elements().remove();
       cy.add({
         nodes: award.nodes.map(n => ({ data: { id: n.id, name: n.name, role: n.role, deg: n.deg, clo: n.clo, bet: n.bet, clu: n.clu, indeg: n.indeg, outdeg: n.outdeg } })),
-        edges: award.edges.map((e, i) => ({ data: { id: 'ae' + i, source: e.source, target: e.target } })),
+        edges: award.edges.map((e, i) => ({
+          data: { id: 'ae' + i, source: e.source, target: e.target },
+          classes: award.directed ? (e.reciprocal ? 'directed reciprocal' : 'directed') : '',
+        })),
       });
       runLayout();
       updateLegend(award);
