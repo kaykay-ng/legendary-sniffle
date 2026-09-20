@@ -1694,337 +1694,404 @@
     {
      "source": "Arabian_Knight_(character)",
      "target": "Hulk",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Arabian_Knight_(character)",
      "target": "Union_Jack_(Marvel_Comics)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Nova_(Richard_Rider)",
      "target": "Cable_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Nova_(Richard_Rider)",
      "target": "Ms._Marvel",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Nova_(Richard_Rider)",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Ghost_Rider_(Danny_Ketch)",
      "target": "Hulk",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Ghost_Rider_(Danny_Ketch)",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Ghost_Rider_(Danny_Ketch)",
      "target": "Wolverine_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Cable_(character)",
      "target": "Betsy_Braddock",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Cable_(character)",
      "target": "Deadpool",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Cable_(character)",
      "target": "Rachel_Summers",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Cable_(character)",
      "target": "Wolverine_(character)",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Typeface_(character)",
      "target": "Deadpool",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Typeface_(character)",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Deathlok",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Betsy_Braddock",
      "target": "Brian_Braddock",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": true
     },
     {
      "source": "Betsy_Braddock",
      "target": "Deadpool",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Betsy_Braddock",
      "target": "Deathlok",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Betsy_Braddock",
      "target": "Emma_Frost",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Betsy_Braddock",
      "target": "Rachel_Summers",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Betsy_Braddock",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Betsy_Braddock",
      "target": "Wolverine_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Arabian_Knight_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Elsa_Bloodstone",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Emma_Frost",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Hulk",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Killpower",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Ms._Marvel",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Rachel_Summers",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Spitfire_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Brian_Braddock",
      "target": "Union_Jack_(Marvel_Comics)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Gauntlet_(Joseph_Green)",
      "target": "Hulk",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "War_Machine",
      "target": "Cable_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "War_Machine",
      "target": "Deathlok",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Deadpool",
      "target": "Elsa_Bloodstone",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Deadpool",
      "target": "Hulk",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Deadpool",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Deadpool",
      "target": "Wolverine_(character)",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Killpower",
      "target": "Hulk",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Spider-Man",
      "target": "Hulk",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Paladin_(comics)",
      "target": "Solo_(Marvel_Comics)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": true
     },
     {
      "source": "Paladin_(comics)",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Hulk",
      "target": "Wolverine_(character)",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Spitfire_(character)",
      "target": "Union_Jack_(Marvel_Comics)",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Emma_Frost",
      "target": "Cable_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Emma_Frost",
      "target": "Rachel_Summers",
-     "reciprocal": true
+     "reciprocal": true,
+     "intoHeadliner": false
     },
     {
      "source": "Emma_Frost",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Emma_Frost",
      "target": "Wolverine_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Wolverine_(character)",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Battlestar_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Cable_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Deadpool",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Deathlok",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "G._W._Bridge",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Gauntlet_(Joseph_Green)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Ghost_Rider_(Danny_Ketch)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Hulk",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Nova_(Richard_Rider)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Typeface_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "War_Machine",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Solo_(Marvel_Comics)",
      "target": "Wolverine_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Elsa_Bloodstone",
      "target": "Wolverine_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "G._W._Bridge",
      "target": "Cable_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Rachel_Summers",
      "target": "Deadpool",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Rachel_Summers",
      "target": "Spider-Man",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     },
     {
      "source": "Rachel_Summers",
      "target": "Wolverine_(character)",
-     "reciprocal": false
+     "reciprocal": false,
+     "intoHeadliner": false
     }
    ],
    "directed": true

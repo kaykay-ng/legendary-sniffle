@@ -31,7 +31,7 @@
     popular_but_replaceable: 'Highlighted metric: clustering coefficient vs. betweenness rank.',
     big_fish_small_pond: 'Highlighted metric: closeness centrality vs. degree.',
     best_of_both_worlds: 'Highlighted metric: clustering coefficient and betweenness, both at once.',
-    name_dropper: 'Directed graph: arrows point from citer to cited. A double-headed edge is a mutual citation; every single-headed edge is one-way.',
+    name_dropper: 'Directed graph: gray edges are the winners citing someone else; orange edges are the rare case of someone citing a winner back.',
     loneliest_portal: 'This island has no path to the other 277 characters — it is its own separate component.',
   };
 
@@ -91,20 +91,32 @@
         {
           selector: 'edge.directed',
           style: {
-            'width': 1.1,
-            'line-color': cssVar('--orange'),
-            'target-arrow-color': cssVar('--orange'),
+            'width': 0.9,
+            'line-color': cssVar('--muted'),
+            'target-arrow-color': cssVar('--muted'),
             'target-arrow-shape': 'triangle',
             'arrow-scale': 0.7,
             'curve-style': 'bezier',
-            'opacity': 0.6,
+            'opacity': 0.45,
           }
         },
         {
           selector: 'edge.directed.reciprocal',
           style: {
-            'source-arrow-color': cssVar('--orange'),
+            'source-arrow-color': cssVar('--muted'),
             'source-arrow-shape': 'triangle',
+          }
+        },
+        {
+          selector: 'edge.directed.into-headliner',
+          style: {
+            'width': 2.2,
+            'line-color': cssVar('--orange'),
+            'target-arrow-color': cssVar('--orange'),
+            'source-arrow-color': cssVar('--orange'),
+            'arrow-scale': 1,
+            'opacity': 1,
+            'z-index': 10,
           }
         }
       ],
@@ -139,10 +151,15 @@
       cy.elements().remove();
       cy.add({
         nodes: award.nodes.map(n => ({ data: { id: n.id, name: n.name, role: n.role, deg: n.deg, clo: n.clo, bet: n.bet, clu: n.clu, indeg: n.indeg, outdeg: n.outdeg } })),
-        edges: award.edges.map((e, i) => ({
-          data: { id: 'ae' + i, source: e.source, target: e.target },
-          classes: award.directed ? (e.reciprocal ? 'directed reciprocal' : 'directed') : '',
-        })),
+        edges: award.edges.map((e, i) => {
+          let classes = '';
+          if (award.directed) {
+            classes = 'directed';
+            if (e.reciprocal) classes += ' reciprocal';
+            if (e.intoHeadliner) classes += ' into-headliner';
+          }
+          return { data: { id: 'ae' + i, source: e.source, target: e.target }, classes };
+        }),
       });
       runLayout();
       updateLegend(award);
