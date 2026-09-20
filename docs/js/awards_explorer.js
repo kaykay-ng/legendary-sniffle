@@ -127,11 +127,9 @@
       <p class="award-blurb">
         A tie: <strong>Solo_(Marvel_Comics)</strong> and <strong>Brian_Braddock</strong> both sit
         at in-degree <strong>1</strong> despite citing a dozen other characters apiece. Solo's
-        article links out to twelve names &mdash; Cable, Deadpool, Hulk, Wolverine, War Machine,
-        Nova_(Richard_Rider), Ghost_Rider_(Danny_Ketch), Deathlok, Battlestar, G.W._Bridge,
-        Gauntlet_(Joseph_Green), Typeface &mdash; and the only one that links back is
-        Paladin_(comics). Brian_Braddock links out to eleven, and the only inbound link is from
-        his own twin sister, Betsy_Braddock.
+        article links out to twelve other characters, and the only one that links back is
+        <strong>Paladin_(comics)</strong>. Brian_Braddock links out to eleven, and the only inbound
+        link is from his own twin sister, <strong>Betsy_Braddock</strong>.
       </p>
       <p class="award-blurb">
         Reading the actual Wikipedia pages splits this tie into two different stories.
@@ -172,16 +170,28 @@
         1/30th the scale.
       </p>
       <p class="award-blurb">
+        That makes Radian both the hub <em>and</em> the bridge of his island, which don't
+        normally travel together. High degree usually comes bundled with high clustering &mdash;
+        a hub's neighbors tend to already know each other, which is exactly what makes a hub
+        <em>replaceable</em> rather than critical (see Award 2). Radian's six connections break
+        that pattern: they span two cliques that never touch each other directly, so his degree
+        comes entirely from bridging, not from redundancy. That's a structural hole &mdash; a
+        broker whose value comes precisely from connecting two clusters that don't connect to each
+        other.
+      </p>
+      <p class="award-blurb">
         The real twist is in the Wikipedia text, not the link structure: Radian was "killed by
         Shear for supposedly turning traitor." Shear sits in the 5-node half of the split &mdash;
         meaning the edge that connects Radian to one side of his own bridge is a link to his own
         killer.
       </p>
       <div class="callout">
-        Every structural property that made Rockman surprising &mdash; low personal clustering, a
-        dead end depending entirely on him, a betweenness value his degree alone would never
-        predict &mdash; shows up again here, inside a pocket of the network that never even
-        reaches Rockman, or anyone else in the giant component, at all.
+        Rockman and Radian get to the same fragility from opposite directions. Rockman is a
+        bridge <em>because</em> he has almost no connections &mdash; a bottleneck by scarcity.
+        Radian is a bridge <em>despite</em> having the most connections in his world &mdash; a
+        bottleneck by structure. Both properties vanish the moment either pocket connects to
+        something bigger; this island never reaches Rockman, or anyone else in the giant
+        component, at all.
       </div>`,
   };
 
@@ -284,7 +294,15 @@
       maxZoom: 3,
     });
 
-    function runLayout() {
+    function runLayout(award) {
+      if (award.layout === 'preset') {
+        // Small, fixed graphs (e.g. the Loneliest Portal) get hand-placed
+        // coordinates instead of a force layout, so the hub stays anchored
+        // at the center and its two sides stay visually separated every
+        // time — cose's randomization was scattering Radian off to one side.
+        cy.layout({ name: 'preset', fit: true, padding: 40 }).run();
+        return;
+      }
       cy.layout({
         name: 'cose',
         animate: false,
@@ -309,7 +327,10 @@
       const award = byKey[key] || DATA.awards[0];
       cy.elements().remove();
       cy.add({
-        nodes: award.nodes.map(n => ({ data: { id: n.id, name: n.name, role: n.role, deg: n.deg, clo: n.clo, bet: n.bet, clu: n.clu, indeg: n.indeg, outdeg: n.outdeg } })),
+        nodes: award.nodes.map(n => ({
+          data: { id: n.id, name: n.name, role: n.role, deg: n.deg, clo: n.clo, bet: n.bet, clu: n.clu, indeg: n.indeg, outdeg: n.outdeg },
+          position: (n.x !== undefined && n.y !== undefined) ? { x: n.x, y: n.y } : undefined,
+        })),
         edges: award.edges.map((e, i) => {
           let classes = '';
           if (award.directed) {
@@ -320,7 +341,7 @@
           return { data: { id: 'ae' + i, source: e.source, target: e.target }, classes };
         }),
       });
-      runLayout();
+      runLayout(award);
       updateLegend(award);
       document.getElementById('awardTextPanel').innerHTML = AWARD_TEXT[award.key] || '';
     }
