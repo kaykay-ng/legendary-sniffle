@@ -127,11 +127,9 @@
       <p class="award-blurb">
         A tie: <strong>Solo_(Marvel_Comics)</strong> and <strong>Brian_Braddock</strong> both sit
         at in-degree <strong>1</strong> despite citing a dozen other characters apiece. Solo's
-        article links out to twelve names &mdash; Cable, Deadpool, Hulk, Wolverine, War Machine,
-        Nova_(Richard_Rider), Ghost_Rider_(Danny_Ketch), Deathlok, Battlestar, G.W._Bridge,
-        Gauntlet_(Joseph_Green), Typeface &mdash; and the only one that links back is
-        Paladin_(comics). Brian_Braddock links out to eleven, and the only inbound link is from
-        his own twin sister, Betsy_Braddock.
+        article links out to twelve other characters, and the only one that links back is
+        <strong>Paladin_(comics)</strong>. Brian_Braddock links out to eleven, and the only inbound
+        link is from his own twin sister, <strong>Betsy_Braddock</strong>.
       </p>
       <p class="award-blurb">
         Reading the actual Wikipedia pages splits this tie into two different stories.
