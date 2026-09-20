@@ -836,6 +836,29 @@ footer a {
   margin-bottom: 0;
 }
 
+.award-explorer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 20px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.award-network-card {
+  padding: 12px;
+  position: sticky;
+  top: 16px;
+}
+
+@media (max-width: 900px) {
+  .award-explorer-grid {
+    grid-template-columns: 1fr;
+  }
+  .award-network-card {
+    position: static;
+  }
+}
+
 #awardsCy {
   width: 100%;
   height: 560px;
