@@ -170,16 +170,28 @@
         1/30th the scale.
       </p>
       <p class="award-blurb">
+        That makes Radian both the hub <em>and</em> the bridge of his island, which don't
+        normally travel together. High degree usually comes bundled with high clustering &mdash;
+        a hub's neighbors tend to already know each other, which is exactly what makes a hub
+        <em>replaceable</em> rather than critical (see Award 2). Radian's six connections break
+        that pattern: they span two cliques that never touch each other directly, so his degree
+        comes entirely from bridging, not from redundancy. That's a structural hole &mdash; a
+        broker whose value comes precisely from connecting two clusters that don't connect to each
+        other.
+      </p>
+      <p class="award-blurb">
         The real twist is in the Wikipedia text, not the link structure: Radian was "killed by
         Shear for supposedly turning traitor." Shear sits in the 5-node half of the split &mdash;
         meaning the edge that connects Radian to one side of his own bridge is a link to his own
         killer.
       </p>
       <div class="callout">
-        Every structural property that made Rockman surprising &mdash; low personal clustering, a
-        dead end depending entirely on him, a betweenness value his degree alone would never
-        predict &mdash; shows up again here, inside a pocket of the network that never even
-        reaches Rockman, or anyone else in the giant component, at all.
+        Rockman and Radian get to the same fragility from opposite directions. Rockman is a
+        bridge <em>because</em> he has almost no connections &mdash; a bottleneck by scarcity.
+        Radian is a bridge <em>despite</em> having the most connections in his world &mdash; a
+        bottleneck by structure. Both properties vanish the moment either pocket connects to
+        something bigger; this island never reaches Rockman, or anyone else in the giant
+        component, at all.
       </div>`,
   };
 
