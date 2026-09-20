@@ -294,7 +294,15 @@
       maxZoom: 3,
     });
 
-    function runLayout() {
+    function runLayout(award) {
+      if (award.layout === 'preset') {
+        // Small, fixed graphs (e.g. the Loneliest Portal) get hand-placed
+        // coordinates instead of a force layout, so the hub stays anchored
+        // at the center and its two sides stay visually separated every
+        // time — cose's randomization was scattering Radian off to one side.
+        cy.layout({ name: 'preset', fit: true, padding: 40 }).run();
+        return;
+      }
       cy.layout({
         name: 'cose',
         animate: false,
@@ -319,7 +327,10 @@
       const award = byKey[key] || DATA.awards[0];
       cy.elements().remove();
       cy.add({
-        nodes: award.nodes.map(n => ({ data: { id: n.id, name: n.name, role: n.role, deg: n.deg, clo: n.clo, bet: n.bet, clu: n.clu, indeg: n.indeg, outdeg: n.outdeg } })),
+        nodes: award.nodes.map(n => ({
+          data: { id: n.id, name: n.name, role: n.role, deg: n.deg, clo: n.clo, bet: n.bet, clu: n.clu, indeg: n.indeg, outdeg: n.outdeg },
+          position: (n.x !== undefined && n.y !== undefined) ? { x: n.x, y: n.y } : undefined,
+        })),
         edges: award.edges.map((e, i) => {
           let classes = '';
           if (award.directed) {
@@ -330,7 +341,7 @@
           return { data: { id: 'ae' + i, source: e.source, target: e.target }, classes };
         }),
       });
-      runLayout();
+      runLayout(award);
       updateLegend(award);
       document.getElementById('awardTextPanel').innerHTML = AWARD_TEXT[award.key] || '';
     }

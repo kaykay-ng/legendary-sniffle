@@ -2112,7 +2112,9 @@
      "bet": 0.0,
      "clu": 1.0,
      "indeg": 2,
-     "outdeg": 1
+     "outdeg": 1,
+     "x": 59.2,
+     "y": -126.9
     },
     {
      "id": "Shear_(character)",
@@ -2123,7 +2125,9 @@
      "bet": 0.083,
      "clu": 0,
      "indeg": 1,
-     "outdeg": 2
+     "outdeg": 2,
+     "x": 80.3,
+     "y": 114.7
     },
     {
      "id": "Backhand_(character)",
@@ -2134,7 +2138,9 @@
      "bet": 0.018,
      "clu": 0,
      "indeg": 2,
-     "outdeg": 1
+     "outdeg": 1,
+     "x": 213.0,
+     "y": 149.1
     },
     {
      "id": "Snapdragon_(Morituri)",
@@ -2145,7 +2151,9 @@
      "bet": 0.03,
      "clu": 0.667,
      "indeg": 2,
-     "outdeg": 3
+     "outdeg": 3,
+     "x": 126.9,
+     "y": -59.2
     },
     {
      "id": "Scatterbrain_(Morituri)",
@@ -2156,7 +2164,9 @@
      "bet": 0.0,
      "clu": 1.0,
      "indeg": 2,
-     "outdeg": 2
+     "outdeg": 2,
+     "x": -260.0,
+     "y": -0.0
     },
     {
      "id": "Toxyn",
@@ -2167,7 +2177,9 @@
      "bet": 0.107,
      "clu": 0.667,
      "indeg": 3,
-     "outdeg": 2
+     "outdeg": 2,
+     "x": -121.2,
+     "y": 70.0
     },
     {
      "id": "Scaredycat",
@@ -2178,7 +2190,9 @@
      "bet": 0.107,
      "clu": 0.667,
      "indeg": 3,
-     "outdeg": 3
+     "outdeg": 3,
+     "x": -121.2,
+     "y": -70.0
     },
     {
      "id": "Radian_(Morituri)",
@@ -2189,7 +2203,9 @@
      "bet": 0.667,
      "clu": 0.2,
      "indeg": 4,
-     "outdeg": 6
+     "outdeg": 6,
+     "x": 0,
+     "y": 0
     },
     {
      "id": "Vyking",
@@ -2200,7 +2216,9 @@
      "bet": 0.131,
      "clu": 0.333,
      "indeg": 3,
-     "outdeg": 2
+     "outdeg": 2,
+     "x": 135.2,
+     "y": 36.2
     }
    ],
    "edges": [
@@ -2256,7 +2274,8 @@
      "source": "Radian_(Morituri)",
      "target": "Vyking"
     }
-   ]
+   ],
+   "layout": "preset"
   }
  ]
 }
