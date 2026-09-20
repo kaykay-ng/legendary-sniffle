@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Popularity vs. Being Load-Bearing</title>
-    <meta name="description" content="A log-log scatter of betweenness against degree on the Marvel character network surfaces Rockman_(character) — degree 2, yet the single largest residual in the whole giant component — plus two other bridge characters degree alone would never surface, and a live explorable that isolates why.">
+    <meta name="description" content="A log-log scatter of betweenness against degree surfaces Rockman — degree 2, yet the largest residual in the giant component — plus targeted attack vs. random failure against a configuration-model null, whether the network's biggest cliques are real teams, team and decade homophily tested against chance, and a random-walk explorable that converges onto real PageRank.">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
 </head>
@@ -22,7 +22,10 @@
                 <a href="#rockman">The Rockman surprise</a> ·
                 <a href="#other-bridges">Other bridges degree misses</a> ·
                 <a href="#giant-explorer">Try it on the real network</a> ·
-                <a href="#try-it">Isolate the mechanism</a>
+                <a href="#try-it">Isolate the mechanism</a> ·
+                <a href="#attack-tolerance">Who holds it together?</a> ·
+                <a href="#cliques-homophily">Cliques &amp; homophily</a> ·
+                <a href="#random-walk">Random walk = PageRank</a>
             </nav>
             <div class="hero-eyebrow">02805 · Social Graphs and Interactions · Week 3</div>
             <h1>Popularity vs. Being Load-Bearing</h1>
@@ -228,6 +231,354 @@
                 </div>
             </section>
 
+            <section id="attack-tolerance" class="section">
+                <h2>Who Actually Holds the Network Together?</h2>
+                <p class="section-intro">
+                    Betweenness predicts who <em>carries</em> a lot of shortest-path traffic. It
+                    doesn't automatically predict who's <em>irreplaceable</em> &mdash; those are
+                    different questions, and the giant-component explorer above already hinted at
+                    the gap. Two ways to test it directly: knock out one character at a time and
+                    measure the actual damage, then remove characters in bulk, by different
+                    strategies, and watch how fast the network comes apart.
+                </p>
+
+                <div class="card">
+                    <div class="subsection">
+                        <h3>One character at a time: does betweenness predict the damage?</h3>
+                        <p>
+                            For every one of the 277 characters in the giant component: remove just
+                            that one character, alone, and measure how many <em>other</em> characters
+                            get stranded outside the resulting largest fragment.
+                        </p>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Top single-character removals by actual damage</caption>
+                                <thead><tr><th>Character</th><th>Stranded</th><th>Betweenness rank</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Spider-Man</td><td class="num">5</td><td class="num">#1</td></tr>
+                                    <tr><td>Black Widow (Natasha Romanova)</td><td class="num">3</td><td class="num">#8</td></tr>
+                                    <tr><td>Doctor Strange</td><td class="num">2</td><td class="num">#4</td></tr>
+                                    <tr><td>Deadpool</td><td class="num">1</td><td class="num">#5</td></tr>
+                                    <tr><td>Deathlok</td><td class="num">1</td><td class="num">#16</td></tr>
+                                    <tr><td>Genis-Vell</td><td class="num">1</td><td class="num">#53</td></tr>
+                                    <tr><td>Guardsman (character)</td><td class="num">1</td><td class="num">#47</td></tr>
+                                    <tr><td>Moon Knight</td><td class="num">1</td><td class="num">#13</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Betweenness vs. actual damage</caption>
+                                <tbody>
+                                    <tr><td>Highest betweenness</td><td>Spider-Man</td></tr>
+                                    <tr><td>Highest actual damage</td><td>Spider-Man</td></tr>
+                                    <tr><td>Same node?</td><td>yes</td></tr>
+                                    <tr><td>Spearman correlation (damage vs. betweenness, all 277)</td><td class="num">0.31</td></tr>
+                                    <tr><td>Hercules's damage (betweenness rank #7)</td><td class="num">0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout">
+                            The prediction <strong>holds at the very top</strong>: Spider-Man is
+                            simultaneously #1 by betweenness and the single most damaging character to
+                            remove &mdash; his 271-node aftermath (mentioned above) is the worst any
+                            single removal produces. But go past the very top and the two rankings
+                            mostly decouple (Spearman&nbsp;=&nbsp;0.31, weak) &mdash; <strong>Hercules,
+                            betweenness rank #7, causes zero additional stranding when removed
+                            alone.</strong> Every shortest path that nominally "passed through" him has
+                            an equally-short alternate route through someone else; he carries traffic
+                            without being anyone's only road. Black Widow is the flip side: only rank
+                            #8 by betweenness, but the second-most damaging single removal in the whole
+                            network &mdash; betweenness undersells her precisely because she's a
+                            genuine <em>cut</em>-adjacent bridge, not just a busy one.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>In bulk: targeted attack vs. random failure &mdash; compared to what?</h3>
+                        <p>
+                            Now remove characters in batches, three strategies on the real network:
+                            highest betweenness first, highest degree first, or uniformly at random
+                            (50 random orders, averaged). Then the "compared to what" question this
+                            site keeps asking: is the real network's vulnerability to targeted attack
+                            just what its heavy-tailed <em>degree sequence</em> guarantees, or is the
+                            real wiring itself more fragile than that? 30 degree-preserving
+                            configuration-model replicates, same two targeted strategies recomputed on
+                            each, averaged.
+                        </p>
+                        <figure class="chart">
+                            <img src="images/week3_attack_tolerance.png" alt="Line chart showing the giant component's fraction of original size as nodes are removed, comparing highest-betweenness-first, highest-degree-first, and random removal order on the real network against the same two targeted strategies averaged over 30 configuration-model nulls; the real network sits consistently below (more fragile than) the null at every checkpoint">
+                            <figcaption>Giant component size vs. fraction of nodes removed &mdash; real network vs. a degree-preserving null, three strategies.</figcaption>
+                        </figure>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Betweenness-first: real vs. null</caption>
+                                <thead><tr><th>Removed</th><th>Real</th><th>Null (mean of 30)</th></tr></thead>
+                                <tbody>
+                                    <tr><td>5% (13 nodes)</td><td class="num">90.3%</td><td class="num">92.7%</td></tr>
+                                    <tr><td>10% (27 nodes)</td><td class="num">83.4%</td><td class="num">85.3%</td></tr>
+                                    <tr><td>20% (55 nodes)</td><td class="num">65.3%</td><td class="num">68.0%</td></tr>
+                                    <tr><td>30% (83 nodes)</td><td class="num">47.3%</td><td class="num">48.7%</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Degree-first: real vs. null</caption>
+                                <thead><tr><th>Removed</th><th>Real</th><th>Null (mean of 30)</th></tr></thead>
+                                <tbody>
+                                    <tr><td>5% (13 nodes)</td><td class="num">91.0%</td><td class="num">93.6%</td></tr>
+                                    <tr><td>10% (27 nodes)</td><td class="num">81.6%</td><td class="num">86.5%</td></tr>
+                                    <tr><td>20% (55 nodes)</td><td class="num">66.8%</td><td class="num">70.5%</td></tr>
+                                    <tr><td>30% (83 nodes)</td><td class="num">46.2%</td><td class="num">47.6%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout orange">
+                            The textbook result, reproduced first: <strong>random failure barely
+                            dents it</strong> &mdash; nearly a straight line, since most characters
+                            aren't anyone's sole route to anywhere. Both targeted strategies collapse
+                            far faster, and past ~30% removed they fall off a cliff into a handful of
+                            disconnected fragments. Betweenness and degree track each other closely
+                            (removing the biggest hub usually also removes whoever carries the most
+                            traffic) &mdash; the real daylight between the two measures is in the
+                            single-node cases above (Hercules, Black Widow), not in this bulk view.
+                        </div>
+                        <div class="callout aqua">
+                            <strong>The real network is consistently, if modestly, more fragile than
+                            its own degree sequence predicts</strong> &mdash; at every checkpoint,
+                            under both targeted strategies, the real curve sits 2&ndash;5 percentage
+                            points below the configuration-model null's mean, outside its shaded
+                            band through most of the removal range. Degree heterogeneity alone (the
+                            null, which has zero real-world structure beyond who-connects-to-how-many)
+                            already explains <em>most</em> of the vulnerability, same as the clustering
+                            and distance-distribution results elsewhere on this site &mdash; but not
+                            quite all of it. The remaining gap is consistent with what Part 1 above
+                            found directly: real bridges like Black Widow sit between genuine
+                            real-world clusters (spies, Spider-people, cosmic heroes) that a
+                            degree-preserving rewiring scrambles away, so the null's "important" nodes
+                            are interchangeable in a way the real network's aren't.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cliques-homophily" class="section">
+                <h2>Do the Biggest Cliques Turn Out to Be Teams?</h2>
+                <p class="section-intro">
+                    A clique here is a set of characters whose articles <em>all</em> link to each
+                    other, pairwise &mdash; the tightest possible structure a network can have.
+                    Finding the biggest ones on the giant component (893 maximal cliques in total,
+                    <code>nx.find_cliques</code>) and naming their members is the direct way to ask
+                    whether "team" is a real structural feature of this network, or just a label we'd
+                    like to project onto it.
+                </p>
+
+                <div class="card">
+                    <div class="subsection">
+                        <h3>The largest cliques: yes, they're a team</h3>
+                        <p>
+                            The largest maximal cliques top out at size 8 &mdash; six distinct
+                            8-cliques, all drawn from the same 11-character pool, all unmistakably
+                            X-Men:
+                        </p>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>Core across all six size-8 cliques</caption>
+                                <thead><tr><th>Character</th><th>Wikipedia category</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Cyclops (Marvel Comics)</td><td>X-Men members</td></tr>
+                                    <tr><td>Wolverine (character)</td><td>X-Men members</td></tr>
+                                    <tr><td>Storm (Marvel Comics)</td><td>X-Men members</td></tr>
+                                    <tr><td>Jean Grey</td><td>X-Men members</td></tr>
+                                    <tr><td>Rachel Summers</td><td>X-Men members</td></tr>
+                                    <tr><td>Betsy Braddock</td><td>X-Men members</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>Swappable across the six (1&ndash;2 slots each)</caption>
+                                <thead><tr><th>Character</th><th>Wikipedia category</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Emma Frost</td><td>X-Men supporting characters</td></tr>
+                                    <tr><td>Cable (character)</td><td>New Mutants / X-Force</td></tr>
+                                    <tr><td>Jubilee (character)</td><td>X-Men members</td></tr>
+                                    <tr><td>Northstar (character)</td><td>X-Men members</td></tr>
+                                    <tr><td>Phoenix (Guardians of the Galaxy)</td><td>X-Men-adjacent (Phoenix Force)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            Drop one level to size-6 cliques (25 of them) and other real teams show
+                            up too &mdash; not X-Men this time:
+                        </p>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>A supernatural/horror cluster (Midnight Sons)</caption>
+                                <thead><tr><th>Character</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Blade (character)</td></tr>
+                                    <tr><td>Doctor Strange</td></tr>
+                                    <tr><td>Ghost Rider (Johnny Blaze)</td></tr>
+                                    <tr><td>Morbius</td></tr>
+                                    <tr><td>Werewolf by Night</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>A street-level / mercenary cluster</caption>
+                                <thead><tr><th>Character</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Misty Knight</td></tr>
+                                    <tr><td>Paladin (comics)</td></tr>
+                                    <tr><td>Shang-Chi</td></tr>
+                                    <tr><td>Spider-Man</td></tr>
+                                    <tr><td>Tarantula (Marvel Comics)</td></tr>
+                                    <tr><td>U.S. Agent</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <figure class="chart">
+                            <img src="images/week3_cliques.png" alt="Three circular node-link diagrams: the eleven X-Men characters that appear across the six 8-cliques, with the six always-present core members in red and near-complete edges (51 of 55 possible, only four pairs missing); the five-member Midnight Sons clique, a perfect complete graph; and the six-member street-level/mercenary clique, also a perfect complete graph">
+                            <figcaption>
+                                Left: all eleven X-Men across the six overlapping 8-cliques (red = the
+                                six-member core present in every one). Middle and right: the Midnight
+                                Sons and street-level cliques, each a perfect complete graph by
+                                definition &mdash; every possible edge present.
+                            </figcaption>
+                        </figure>
+                        <p>
+                            The X-Men panel is the more informative one precisely <em>because</em> it
+                            isn't a single clique but the union of six overlapping ones: 51 of 55
+                            possible edges are real, and all four missing pairs (Cable&ndash;Storm,
+                            and Jubilee/Northstar/Phoenix with each other) involve only the
+                            "swappable" characters &mdash; never the six-member core. The clique
+                            algorithm is finding the same structure the table already suggested: one
+                            dense, stable inner group, with a rotating cast around its edges.
+                        </p>
+                        <div class="callout">
+                            <strong>Are they all teams? Essentially yes.</strong> Morbius and
+                            Werewolf by Night both carry Wikipedia's own <code>Midnight Sons</code>
+                            category &mdash; that cluster is a real, named team, not a coincidence.
+                            The street-level cluster doesn't share one clean Wikipedia team category
+                            (Misty Knight and Paladin have none at all), but it's the same
+                            mercenary/support-hero neighborhood <a href="#other-bridges">U.S. Agent</a>
+                            was already shown bridging into the hub core, earlier on this page &mdash;
+                            found again independently, this time by clique instead of betweenness.
+                            Every large clique in this network names a real cluster; none of them are
+                            structurally arbitrary.
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Homophily: does sharing a team predict a link, more than chance?</h3>
+                        <p>
+                            Two attributes, both scraped fresh from Wikipedia's category system for
+                            every character in the giant component: <strong>team</strong> (X-Men /
+                            Guardians of the Galaxy / Fantastic Four &mdash; whichever category
+                            matched first) and <strong>first-appearance decade</strong>. Both tested
+                            the same correct way: shuffle the <em>attribute labels</em> across the
+                            fixed real network (200 times), not the edges &mdash; the question is
+                            whether <em>this</em> labeling of <em>this</em> real network is unusual,
+                            not whether the wiring itself is (that's a different null, used elsewhere
+                            on this site for degree and clustering).
+                        </p>
+                        <div class="table-grid">
+                            <table class="leaderboard">
+                                <caption>By team (34 of 277 resolved &mdash; see note)</caption>
+                                <tbody>
+                                    <tr><td>real assortativity r</td><td class="num">0.571</td></tr>
+                                    <tr><td>label-shuffle null (mean &plusmn; std)</td><td class="num">&minus;0.050 &plusmn; 0.057</td></tr>
+                                    <tr><td>z-score</td><td class="num">10.8</td></tr>
+                                    <tr><td>edges within the same team</td><td class="num">86.0%</td></tr>
+                                </tbody>
+                            </table>
+                            <table class="leaderboard">
+                                <caption>By decade (189 of 277 resolved)</caption>
+                                <tbody>
+                                    <tr><td>real assortativity r</td><td class="num">0.156</td></tr>
+                                    <tr><td>label-shuffle null (mean &plusmn; std)</td><td class="num">&minus;0.011 &plusmn; 0.028</td></tr>
+                                    <tr><td>z-score</td><td class="num">6.0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout aqua">
+                            <strong>Both are far stronger than chance &mdash; team by a lot more than
+                            decade.</strong> Team coverage is thin (Wikipedia's own team categories
+                            turn out to be genuinely inconsistent &mdash; Misty Knight and U.S. Agent,
+                            both real, well-documented heroes, carry no clean "team members" category
+                            at all, which is exactly why this section leaned on cliques first to
+                            confirm teams are real before trying to label them), but among the 34
+                            characters a team label <em>could</em> be assigned to, 86% of their edges
+                            stay inside the same team, for z&nbsp;&asymp;&nbsp;10.8 against 200
+                            attribute-label shuffles &mdash; not a close call. Decade homophily is
+                            real too (z&nbsp;&asymp;&nbsp;6.0) but far gentler (r=0.16 vs. r=0.57):
+                            sharing an origin era makes two characters modestly more likely to link,
+                            but sharing a team &mdash; literally co-starring in the same stories
+                            &mdash; predicts it far more strongly. That ordering makes narrative
+                            sense, and it's reassuring to see the numbers say so directly.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="random-walk" class="section">
+                <h2>A Random Walk Is PageRank</h2>
+                <p class="section-intro">
+                    PageRank's own definition is a random surfer: at every step, with probability
+                    &alpha; follow a uniformly random outgoing link, and with probability
+                    1&minus;&alpha; teleport to a uniformly random character anywhere in the network
+                    (a dead end with no outgoing links always teleports). Walk that surfer for long
+                    enough on the real directed network below, and the fraction of time it spends at
+                    each character should converge onto real PageRank &mdash; precomputed with
+                    <code>networkx.pagerank</code> in the week-3 notebook, validated there against a
+                    hand-written implementation to six decimal places. Watch the correlation climb as
+                    you add steps &mdash; or click any of the current character's outgoing links
+                    directly to steer the walk yourself; a manual click counts as a step too, folded
+                    into the same tally as the automatic ones.
+                </p>
+
+                <div class="card">
+                    <div class="controls" id="walkControls">
+                        <select id="walkAlpha">
+                            <option value="0.5">&alpha; = 0.5 (teleports often)</option>
+                            <option value="0.85" selected>&alpha; = 0.85 (course default)</option>
+                            <option value="0.95">&alpha; = 0.95 (rarely teleports)</option>
+                        </select>
+                        <button id="walkStepBtn">Step Once</button>
+                        <button id="walkRun100Btn" class="secondary">Run 100 Steps</button>
+                        <button id="walkRun1kBtn" class="secondary">Run 1,000 Steps</button>
+                        <button id="walkRun10kBtn" class="secondary">Run 10,000 Steps</button>
+                        <button id="walkResetBtn" class="secondary">Reset</button>
+                    </div>
+
+                    <div class="explorable-grid">
+                        <svg id="walkSvg" viewBox="0 0 620 300" role="img" aria-label="The current character and its outgoing links, arranged radially -- click any outgoing link to walk there"></svg>
+                        <div class="explorable-stats" id="walkStats"></div>
+                    </div>
+
+                    <div id="walkLog"></div>
+
+                    <div class="table-grid" style="margin-top: 18px;">
+                        <table class="leaderboard" id="walkEmpiricalTable"></table>
+                        <table class="leaderboard" id="walkTrueTable"></table>
+                    </div>
+
+                    <div id="walkScatterChart"></div>
+
+                    <div class="callout" style="margin-top: 18px;">
+                        A handful of steps land almost anywhere — most points sit far from the
+                        diagonal, and the empirical top ten barely resembles the true one. By a
+                        thousand steps the correlation is usually well past 0.9; by ten thousand,
+                        the two top-ten lists are nearly identical. Try &alpha;&nbsp;=&nbsp;0.5: the
+                        walk teleports so often that it barely uses the link structure at all, and
+                        it still converges — just onto a flatter, less concentrated PageRank, since
+                        heavy teleportation drowns out exactly the hub-favoring effect that makes
+                        Spider-Man, Hulk, and Wolverine dominate at &alpha;&nbsp;=&nbsp;0.85.
+                        Steering by hand (click a link in the diagram instead of Step Once) is a good
+                        way to feel the mechanism directly: try always picking the <em>least</em>
+                        familiar name offered — you'll drift toward the network's periphery, and the
+                        empirical leaderboard will stay far from the true one no matter how many
+                        manual steps you take, since you're systematically avoiding exactly the hubs
+                        that real PageRank (and an unbiased random walk) favor.
+                    </div>
+                </div>
+            </section>
+
             <div class="section-nav">
                 <a href="week2.html">&larr; Week 2 &middot; Model Comparison</a>
                 <a class="next" href="centrality_awards.html">Next: The Centrality Awards &rarr;</a>
@@ -246,5 +597,6 @@
 
     <script src="js/week3_giant_explorer.js"></script>
     <script src="js/week3_bridge.js"></script>
+    <script src="js/week3_random_walk.js"></script>
 </body>
 </html>

@@ -440,6 +440,11 @@ table.leaderboard tbody tr:last-child td {
   opacity: 0.85;
 }
 
+.controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .controls input[type="file"] {
   padding: 8px;
   font-size: 0.85em;
@@ -898,6 +903,90 @@ footer a {
   color: var(--muted);
   font-size: 0.86em;
   margin-top: 2px;
+}
+
+/* ---------- Week 3: Random Walk Is PageRank ---------- */
+
+#walkSvg {
+  width: 100%;
+  height: auto;
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.walk-center-label {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #ffffff;
+  text-anchor: middle;
+}
+
+.walk-neighbor-label,
+.walk-axis-label {
+  font-size: 9.5px;
+  fill: var(--ink-2);
+}
+
+.walk-neighbor {
+  cursor: pointer;
+}
+
+.walk-neighbor:hover circle {
+  fill: #e0424f;
+  r: 12;
+}
+
+.walk-neighbor:hover line {
+  stroke: #e0424f;
+  stroke-width: 2;
+}
+
+.walk-neighbor:hover .walk-neighbor-label {
+  fill: #e0424f;
+  font-weight: 700;
+}
+
+.walk-dangling-label {
+  font-size: 12px;
+  fill: var(--muted);
+}
+
+.walk-teleport-label {
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--orange);
+}
+
+#walkLog {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85em;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+
+#walkLog div:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+#walkScatterChart {
+  margin-top: 4px;
+}
+
+#walkScatterChart svg {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
 @media (max-width: 720px) {
